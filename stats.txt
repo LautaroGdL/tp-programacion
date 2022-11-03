@@ -7,9 +7,6 @@ Arbutus:
 Froggy:
 #HP,Energia,DMG,Dodge,RE: [[350],[150],[60-80],[35%],[40]]
 
-Muriel:
-#HP,Energia,DMG,Dodge,RE: [[450],[150],[30-69],[5%],[40]]
-
 Willy:
 #HP,Energia,DMG,Dodge,RE: [[450],[150],[45-69],[3%],[50]]
 
