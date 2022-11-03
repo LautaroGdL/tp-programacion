@@ -1,0 +1,85 @@
+Gr-egg(duelista) [huevo con pez espada de arma]
+HB:550
+E:150
+D:50-60
+DR:10%
+Dodge:10%
+P:Cuando recibe daño tiene un 30% de devolver daño en un 15%
+Core:Básico potenciado 5% en base a HB del enemigo y mitigación de daño por un 15%-CD:2 turnos
+S1:Devuelve y mitiga un 25% del daño a coste de 1 turno-Coste=50 de energía
+S2:Ataque x2 de 35-55 de daño-Coste=35 de energía
+
+
+----------------------------------
+Arbutus (Tank)[arbol spooky]
+HB:750
+E:250
+D:40-45
+DR:30%
+Dodge:-1000001%
+P:Mitiga 15% de daño
+Core:Pose que inhabilita la siguiente habilidad del enemigo-CD:4 turnos
+S1:Stun(PEDRADA)-Coste:125
+S2:Golpe en barrida 35 de daño y 30% de stunnear al enemigo-Coste:100
+
+
+----------------------------------
+Froggy (Asesino) [
+HB:350
+E:100
+D:80-100
+DR:3%
+Dodge:35%
+P:Posibilidad de golpe critico de un 35% aumentando 10% de daño
+Core:Golpea al enemigo con un 45-65 con posibilidad de sangrado de un 70% haciendo 8 de daño por turno por 4 turnos(Sin stack)-CD:5 turnos
+S1:Golpea al enemigo con un 35-75 de daño plus +15% de dodge por 1 turno-CD:2 turnos + 45 coste de energía
+S2:Golpe potenciado con un 15% más de daño plus si el enemigo queda por debajo de 5% de vida es automaticamente ejecutado
+
+
+----------------------------------
+Sanguinario Slime de agua
+HB:600
+E:0
+D:30-69
+DR:5%
+Dodge:5%
+P:Utiliza su HB para castear habilidades, cada ataque básico regenera 15 de vida
+Core:Apuñala al enemigo causando 45-125 de daño y absorbe 35% del daño causado-CD:2 turnos + Coste 100 de vida
+S1:P:La daga stackea 40% del daño causado en vida(Sólo básicos) _ A:Absorbe la sangre stackeada en la daga curandose. Maxstack: 2 turnos _ Coste:Turno
+S2:P:La daga stackea 40% del daño causado en vida(Sólo básicos) _ A:Tira la daga stackeada perdiendo stacks(S1) pero haciendo un 80% de los stacks
+----------------------------------
+Berserk (Willy) 
+HB:650
+E:0
+D:45-69
+DR:15%
+Dodge:3%
+P:Cuando tenga 60% de vida menos por cada 10% gana unos 20 de daño	
+Core:Se engangrena en rabia, obtiene 40+ de daño y su DR baja a 0% por 4 turnos-Coste 6 turnos
+S1:Golpea 3 veces al enemigo haciendo 15-20 de daño cada golpe causandole al enemico una contución-Coste -20 de vida CD:2 turnos
+S2:Un grito feroz el que reduce el daño del enemigo por un 20% por 2 turnos-CD 4 turnos
+
+
+---------------------------------
+Enchanter
+HB:450
+M:820
+D:30-60
+DR:2%
+Dodge:15%
+P:Una posibilidad del 25% de dañar al enemigo antes de que lance un ataque(Básico-No cancela el turno del enemigo)
+Core:Lanza un proyectil el cual impacta al enemigo el cual tiene 35-55 de daño y lo aterroriza(+15% de daño causado) por 2 turnos-Coste: 350 maná 5 turnos
+S1:Obtiene un escudo MAGICOLOCO el cual desvía toda habilidad exceptuando básicos por 1 turno- Coste 450 de maná
+S2:A:Spawnea 4 JORGITOS los cual le da regeneración de maná pasiva A2:Los puede usar como kamikaze haciendo 60-70 de daño-Coste 1 turno por cada activa
+
+---------------------------------
+Pirate
+HB:500
+E:200
+D:45-75
+DR:20%
+Dodge:8%
+P:Cada vez que es golpeado obtiene 5% de daño
+Core:Llama a su barco golpeando 3 bolas de cañón las cuales hacen 60 de daño cada una con una posibilidad de 45% de golpear al objetivo-coste 40 de energía 3 turnos
+S1:Golpea al enemigo con una carga y apuñala al objetivo 25 de daño, sangrado de 5 de daño por 3 turnos- coste 60 de energía
+S2:dispara al objetivo en el estomago cancelando toda habilidad debido al dolor del tiro 45 de daño-coste 100 de energía
