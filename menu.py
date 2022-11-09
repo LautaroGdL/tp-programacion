@@ -21,46 +21,43 @@ def generar_menu(opciones, opcion_salida):
 
 def menu_principal():
     opciones = {
-    '1': ('Arcade', arcade),
-    '2': ('Versus', versus),
-    '3': ('Galeria', galeria),
-    '4': ('Salir', salir)
+    '1': ('Ataque', ataque),
+    '2': ('Habilidades', habilidad),
+    '3': ('Resguardar', resguardar),
+    '4': ('Defensa', defensa),
+    '5': ('Salir', salir)
 }
-    generar_menu(opciones, '4')
+    generar_menu(opciones, '5')
 
-    
-def menu_versus():
+def menu_habilidad():
     opciones = {
-    '1': ('PvP', pvp),
-    '2': ('PvE', pve),
+    '1': ('$hab1', habilidad1),
+    '2': ('$hab2', habilidad2),
     '3': ('Salir', salir)
     }
-    generar_menu(opciones, '3')
+    generar_menu(opciones, '2')
+    
 
     
 
-def arcade():
-
+def ataque():
     print('Elegiste la opción Ataque')
 
-def versus():
-    menu_versus()
+def habilidad():
     print('Elegiste la opción Habilidades')
+    menu_habilidad()
 
-
-def galeria():
+def habilidad1():
     print('Utilizaste $hab1')
 
-def menu_versus():
-    print("Elegi el mode de pelea")
+def habilidad2():
+    print('Utilizaste $hab2')
 
-def pvp():
-    print()
-    salir()
+def resguardar():
+    print('Elegiste la opción Reguardar')
 
-def pve():
-    print()
-    salir()
+def defensa():
+    print('Elegiste la opción Defender')
 
 def salir():
     print('Saliste al menu')
