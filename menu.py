@@ -1,5 +1,5 @@
 def mostrar_menu(opciones):
-    print('Seleccione una opcion: ' /n)
+    print('Seleccione una opcion: ')
     for clave in sorted(opciones):
         print(f' {clave}) {opciones[clave][0]}')
 
@@ -61,6 +61,7 @@ def defensa():
 
 def salir():
     print('Saliste al menu')
+    print()
     menu_principal()
 
 if __name__ == '__main__':
