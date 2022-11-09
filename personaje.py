@@ -15,9 +15,11 @@ def dic_prueba(lista_1:list)->dict:
     dic_1['Id']=(lista_1[0])
     dic_1['Nombre']=(lista_1[1])
     dic_1['HP']=(lista_1[2])
-    dic_1['Energia']=(lista_1[3])
+    dic_1['ST']=(lista_1[3])
     dic_1['Ataque min']=(lista_1[4])
-    dic_1['Ataque max']=(lista_1[5])
+    dic_1['Ataque max']=(lista_1[5]) 
+    dic_1['Dodge']=(lista_1[6]) 
+    dic_1['Regeneración ST']=(lista_1[5]) 
     return dic_1
 
 def dic_datos(lista_per):
