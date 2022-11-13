@@ -1,9 +1,7 @@
-dmgt=40
-dmge=50
+dmg=50
+dmg2=60
 hp=450
-hpe=500
 energia=150
-cool1:0
-cool2=0
-cool3=0
-
+cool1=3
+cool2=2
+cool3=2
