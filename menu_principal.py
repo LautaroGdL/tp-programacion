@@ -1,11 +1,7 @@
 import funcion_csv
+import clear
+import draw
 import os
-
-def clear():
-    os.system("cls")
-
-def draw():
-    print("xX-------------------------------------------------------------------------------------------------------------Xx")
 
 
 # def save():
@@ -29,8 +25,8 @@ def iniciar_juego():
 
     while run:
         while menu:
-            clear()
-            draw()
+            clear.clear()
+            draw.draw()
             menu_p()
             print("1: Arcade")
             print("2: Versus")
@@ -48,8 +44,8 @@ def iniciar_juego():
                 
             #Opciones
             if choice == "1":
-                clear()
-                draw()
+                clear.clear()
+                draw.draw()
                 name = input("Escribe tu nombre: ")
                 menu = False
                 play = True
@@ -57,21 +53,21 @@ def iniciar_juego():
                 f = open("load.csv", "r")
                 load_list = f.readlines()
                 name = load_list[0][:-1]
-                HP = load_list[1][:-1]
-                ATK = load_list[2][:-1]
-                clear()
-                draw()
+                # HP = load_list[1][:-1]
+                # ATK = load_list[2][:-1]
+                clear.clear()
+                draw.draw()
                 print("Bienvenido" + name + "!")
                 print("> ")
                 menu = False
                 play = True
             elif choice == "3":
-                clear()
-                draw()
+                clear.clear()
+                draw.draw()
                 print(">")
             elif choice == "4":
-                clear()
-                draw()
+                clear.clear()
+                draw.draw()
                 rules = True
             elif choice == "5":
                 quit()
@@ -79,10 +75,10 @@ def iniciar_juego():
         while play:
             #save()#autosave
                 
-            clear()
-            draw()
+            clear.clear()
+            draw.draw()
             print("0 - Guardar y salir")
-            draw()
+            draw.draw()
 
             dest = input("#")
 
