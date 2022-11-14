@@ -44,8 +44,8 @@ def cargar_csv():
 
 lista = [Arbutus.name,Arbutus.hp,Arbutus.dmg]
 with open(f'./Personajes/Arbutus/Arbutus.txt', 'wt') as file:
-    for item in lista:
-        file.write(item + "\n")
-    file.close()
+    for i in lista:
+        arch = file.write([i] + "\n")
+        arch = file.close()
 
 print()
