@@ -1,6 +1,5 @@
 import funcion_csv
-import clear
-import draw
+import tools
 from Personajes.Gregg import Gregg
 from Personajes.Huigh import Huigh
 from Personajes.Arbutus import Arbutus
@@ -11,49 +10,67 @@ from Personajes.Froggy import Froggy
 def select_character():
     run = True
     menu = True
-
+    
     while run:
-        clear.clear()
-        draw.draw()
-        print("Seleccione a su personaje: ")
-        print("|Gr-egg: 1° \n|Arbutus: 2° \n|Huigh: 3° \n|Stewie: 4° \n|Willy: 5° \n|Froggy: 6°")
-        choice = ""
-        choice = input("> ")
+        while menu:
+            # tools.time(1,tools.clear())
+            #tools.clear()
+            tools.draw()
+            print("Seleccione a su personaje: ")
+            print("|Gr-egg: 1°| \n|Arbutus: 2°| \n|Huigh: 3°| \n|Stewie: 4°| \n|Willy: 5°| \n|Froggy: 6°|")
+            choice = ""
+            choice = input("> ")
 
-        if choice == "1":
-            lista_texto=funcion_csv.traer_csv("Personajes/Gregg/Gregg_ascii.txt")
-            for i in range(0, len(lista_texto)):
-                print(lista_texto[i].replace("\n", ""))
-            print("Hp: ",Gregg.hp ,"||","Energia: ",Gregg.energia,"||","Daño: ",Gregg.dmge)
+            if choice == "1":
+                # tools.time(5,tools.clear())
+                tools.clear()
+                lista_texto=funcion_csv.traer_csv("Personajes/Gregg/Gregg_ascii.txt")
+                for i in range(0, len(lista_texto)):
+                    print(lista_texto[i].replace("\n", ""))
+                print("Hp: ",Gregg.hp ,"||","Energia: ",Gregg.energia,"||","Daño: ",Gregg.dmg)
+                
 
-        if choice == "2":
+            elif choice == "2":
+                tools.clear()
                 lista_texto=funcion_csv.traer_csv("Personajes/Arbutus/Arbutus_ascii.txt")
                 for i in range(0, len(lista_texto)):
-                    print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Arbutus.hp ,"||","Energia: ",Arbutus.energia,"||","Daño: ",Arbutus.dmge)
+                        print(lista_texto[i].replace("\n", ""))
+                print("Hp: ",Arbutus.hp ,"||","Energia: ",Arbutus.energia,"||","Daño: ",Arbutus.dmg)
 
-        if choice == "3":
+            elif choice == "3":
+                tools.clear()
                 lista_texto=funcion_csv.traer_csv("Personajes/Huigh/Huigh_ascii.txt")
                 for i in range(0, len(lista_texto)):
-                    print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Huigh.hp ,"||","Energia: ",Huigh.energia,"||","Daño: ",Huigh.dmge)
+                        print(lista_texto[i].replace("\n", ""))
+                print("Hp: ",Huigh.hp ,"||","Energia: ",Huigh.energia,"||","Daño: ",Huigh.dmg)
 
-        if choice == "4":
+            elif choice == "4":
+                tools.clear()
                 lista_texto=funcion_csv.traer_csv("Personajes/Stewie/Stewie_ascii.txt")
                 for i in range(0, len(lista_texto)):
-                    print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Stewie.hp ,"||","Energia: ",Stewie.energia,"||","Daño: ",Stewie.dmge)
+                        print(lista_texto[i].replace("\n", ""))
+                print("Hp: ",Stewie.hp ,"||","Energia: ",Stewie.energia,"||","Daño: ",Stewie.dmg)
 
-        if choice == "5":
+            elif choice == "5":
+                tools.clear()
                 lista_texto=funcion_csv.traer_csv("Personajes/Willy/Willy_ascii.txt")
                 for i in range(0, len(lista_texto)):
-                    print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Willy.hp ,"||","Energia: ",Willy.energia,"||","Daño: ",Willy.dmge)
+                        print(lista_texto[i].replace("\n", ""))
+                print("Hp: ",Willy.hp ,"||","Energia: ",Willy.energia,"||","Daño: ",Willy.dmg)
 
-        if choice == "6":
+            elif choice == "6":
+                tools.clear() 
                 lista_texto=funcion_csv.traer_csv("Personajes/Froggy/Froggy_ascii.txt")
                 for i in range(0, len(lista_texto)):
-                    print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmge)
+                        print(lista_texto[i].replace("\n", ""))
+                print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg)
+
+            seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n1>Si \n2>No \n> ").lower()
+
+            while seleccionar_personaje:
+                if seleccionar_personaje == "1":
+                    menu = False
+                else:
+                    seleccionar_personaje = False
 
 select_character()

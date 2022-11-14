@@ -1,5 +1,6 @@
 import os
 import random
+import seleccion_personaje
 
 clear= lambda : os.system('cls')
 
