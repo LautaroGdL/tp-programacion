@@ -1,14 +1,8 @@
+import funcion_csv
 import csv 
 import re
-
-def traer_csv():
-    with open('personajes.csv', 'r') as file:
-        hoja_personaje = file.readlines()
-        # for row in hoja_personaje:
-        #     print(row)
-        return hoja_personaje
-
-lista_estadisticas=traer_csv()
+ 
+lista_estadisticas=funcion_csv.traer_csv('personajes.csv')
 
 def dic_prueba(lista_1:list)->dict:
     dic_1: dict = dict()
