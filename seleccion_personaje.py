@@ -24,7 +24,7 @@ def select_character():
             if choice == "1":
                 # tools.time(5,tools.clear())
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Gregg/Gregg_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Gregg/Gregg_ascii.txt")
                 for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
                 print("Hp: ",Gregg.hp ,"||","Energia: ",Gregg.energia,"||","Daño: ",Gregg.dmg)
@@ -32,35 +32,35 @@ def select_character():
 
             elif choice == "2":
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Arbutus/Arbutus_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Arbutus/Arbutus_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
                 print("Hp: ",Arbutus.hp ,"||","Energia: ",Arbutus.energia,"||","Daño: ",Arbutus.dmg)
 
             elif choice == "3":
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Huigh/Huigh_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Huigh/Huigh_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
                 print("Hp: ",Huigh.hp ,"||","Energia: ",Huigh.energia,"||","Daño: ",Huigh.dmg)
 
             elif choice == "4":
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Stewie/Stewie_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Stewie/Stewie_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
                 print("Hp: ",Stewie.hp ,"||","Energia: ",Stewie.energia,"||","Daño: ",Stewie.dmg)
 
             elif choice == "5":
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Willy/Willy_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Willy/Willy_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
                 print("Hp: ",Willy.hp ,"||","Energia: ",Willy.energia,"||","Daño: ",Willy.dmg)
 
             elif choice == "6":
                 tools.clear() 
-                lista_texto=funcion_csv.traer_csv("Personajes/Froggy/Froggy_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Froggy/Froggy_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
                 print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg)
@@ -70,6 +70,7 @@ def select_character():
             while seleccionar_personaje:
                 if seleccionar_personaje == "1":
                     menu = False
+                    #stats_personaje=funcion_csv.traer_csv()
                 else:
                     seleccionar_personaje = False
 
