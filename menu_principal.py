@@ -1,6 +1,5 @@
 import funcion_csv
-import clear
-import draw
+import tools
 import os
 
 
@@ -25,8 +24,8 @@ def iniciar_juego():
 
     while run:
         while menu:
-            clear.clear()
-            draw.draw()
+            tools.clear()
+            tools.draw()
             menu_p()
             print("1: Arcade")
             print("2: Versus")
@@ -35,7 +34,7 @@ def iniciar_juego():
             print("5: Salir del juego")
 
             if rules:
-                print("Estas son las reglas del juego: ")
+                print("Estas son las reglas del juego: \n-Elegir a un personaje con el cual jugsras el modo Arcade o Versus.-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje. \n-Modo Versus: Pelear contra otro jugador o la máquina \n-Quedar en el ranking habiendo recibido poco daño durante el Modo historia( si se llega a hacer)")
                 rules = False
                 choice = ""
                 input("> ")
@@ -44,8 +43,8 @@ def iniciar_juego():
                 
             #Opciones
             if choice == "1":
-                clear.clear()
-                draw.draw()
+                tools.clear()
+                tools.draw()
                 name = input("Escribe tu nombre: ")
                 menu = False
                 play = True
@@ -55,19 +54,19 @@ def iniciar_juego():
                 name = load_list[0][:-1]
                 # HP = load_list[1][:-1]
                 # ATK = load_list[2][:-1]
-                clear.clear()
-                draw.draw()
+                tools.clear()
+                tools.draw()
                 print("Bienvenido" + name + "!")
                 print("> ")
                 menu = False
                 play = True
             elif choice == "3":
-                clear.clear()
-                draw.draw()
+                tools.clear()
+                tools.draw()
                 print(">")
             elif choice == "4":
-                clear.clear()
-                draw.draw()
+                tools.clear()
+                tools.draw()
                 rules = True
             elif choice == "5":
                 quit()
@@ -75,10 +74,10 @@ def iniciar_juego():
         while play:
             #save()#autosave
                 
-            clear.clear()
-            draw.draw()
+            tools.clear()
+            tools.draw()
             print("0 - Guardar y salir")
-            draw.draw()
+            tools.draw()
 
             dest = input("#")
 
