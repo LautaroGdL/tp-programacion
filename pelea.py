@@ -1,6 +1,6 @@
 import os
 import random
-import seleccion_personaje
+
 
 clear= lambda : os.system('cls')
 
@@ -8,13 +8,9 @@ clear= lambda : os.system('cls')
 def pelea(pj1,pj2):
     #dodge extra es de 10% para todas las habilidades que lo tienen
     #reduccion del dano es del 15% para todas las habilidades que lo tienen
-    stunpj2=0
-    stunpj1=0
-    extradodgepj1=0
-    extradodgepj2=0
-    defensapj1=0
-    defensapj2=0
-    
+    #cada pj con mecanica diferente entre cada habilidad 
+    stunpj2,stunpj1,extradodgepj1,extradodgepj2,defensapj1,defensapj2=0,0,0,0,0,0   
+
     pj1stats=pj1.copy()
     pj2stats=pj2.copy()
 
@@ -22,12 +18,20 @@ def pelea(pj1,pj2):
         
         if extradodgepj1>0:
             pj1['dodge']=(pj1stats['dodge']*0.1)+pj1stats['dodge']
+            extradodgepj1-=1
         else:
             pj1['dodge']=pj1stats['dodge']
         
         if stunpj1>0:
                 stunpj1-=1
                 continue
+        
+        if pj1['hab2']['cooldown']!=pj1stats['hab2']['cooldown']:
+            pj1['hab2']['cooldown']-=1
+
+        if pj1['hab1']['cooldown']!=pj1stats['hab1']['cooldown']:
+            pj1['hab1']['cooldown']-=1
+
 
         while True:
 
@@ -74,31 +78,57 @@ def pelea(pj1,pj2):
                         print('Debe introducir un numero que responda a alguna habilidad')
                 clear()
                 if habilidad==1:
-                    pass
+                    if pj1['hab1']['energia']<pj1stats['energia']  and pj1['hab1']['cooldown']==pj1stats['hab1']['cooldown']: 
+                        pj1['energia']-=pj1['hab1']['energia']
+                        pj1['hab1']['cooldown']+=pj1stats['hab1']['cooldown']
+
+                        if pj1['hab1']['dmg']!=None:
+                            pj2['hp']-=pj1['hab1']['dmg']
+                            print('Ataque de habilidad exitoso')
+    
+                        if pj1['hab1']['dodgehab']!=None:
+                            extradodgepj1=pj1['hab1']['dodgehab']     
+                            print('El dodge ha aumentado un 10%')
+
+                        if pj1['hab1']['defensa']!=None:
+                            defensapj1=pj1['hab1']['defensa']
+                            print(f'Se ha reducido el daño de enemigos un 15% por {pj1["hab1"]["defensa"]} turnos')
+
+                        if pj1['hab1']['stun']!=None:
+                            stunpj2+=pj1['hab1']['stun']
+                            print(f'Se ha stuneado a {pj2["nombre"]}')
+                        break
+                    
+                    else:
+                        print('Energia o cooldown insuficiente, realiza otro movimiento')
+
+
                 if habilidad==2:
-   
-                    if pj1['hab2']['energia']<pj1stats['energia']:
+
+                    if pj1['hab2']['energia']<pj1stats['energia']  and pj1['hab2']['cooldown']==pj1stats['hab2']['cooldown']: 
                         pj1['energia']-=pj1['hab2']['energia']
-                        
+                        pj1['hab2']['cooldown']+=pj1stats['hab2']['cooldown']
+
                         if pj1['hab2']['dmg']!=None:
                             pj2['hp']-=pj1['hab2']['dmg']
                             print('Ataque de habilidad exitoso')
     
-
                         if pj1['hab2']['dodgehab']!=None:
-                            extradodgepj1=pj1['hab2']['dodgehab']
+                            extradodgepj1=pj1['hab2']['dodgehab']     
                             print('El dodge ha aumentado un 10%')
+
+                        if pj1['hab2']['defensa']!=None:
+                            defensapj1=pj1['hab2']['defensa']
+                            print(f'Se ha reducido el daño de enemigos un 15% por {pj1["hab2"]["defensa"]} turnos')
 
                         if pj1['hab2']['stun']!=None:
                             stunpj2+=pj1['hab2']['stun']
 
-                        if pj1['hab2']['defensa']!=None:
-                            pass
                         
                         break
                         
                     else:
-                        print('Energia insuficiente, realiza otro movimiento')
+                        print('Energia o cooldown insuficiente, realiza otro movimiento')
             
             
             elif mov==3:
@@ -125,11 +155,15 @@ def pelea(pj1,pj2):
             
             if stunpj2>0:
                 stunpj2-=1
+                print(f'Stun de {pj1}')
                 continue
 
             if defensapj1>0:
-                pj2['dmg']=pj1stats['dmg']-(pj2stats['dmg']*0.15)
+                pj2['dmg'][0]-=pj2stats['dmg'][0]*0.15
+                pj2['dmg'][1]-=pj2stats['dmg'][1]*0.15
                 defensapj1-=1
+            else:
+                pj2['dmg']=pj2stats['dmg']
                 
             movrandom=random.randint(1,4)
             if movrandom==1:
@@ -175,20 +209,20 @@ def pelea(pj1,pj2):
 
 
 def main():
-    specialegg={'energia':80,'cooldown':3,'dmg':random.randint(70,80),'defensa':10}
+    specialegg={'energia':80,'cooldown':3,'dmg':random.randint(70,80),'defensa':2}
     hab2egg={'energia':40,'cooldown':2,'dmg':random.randint(35,165),'defensa':None,'stun':None,'dodgehab':None}
-    hab2arbutus={'energia':60,'cooldown':1,'dmg':40,'defensa':10,'stun':None,'dodgehab':None}
-    hab1arbutus={'energia':90,'cooldown':3,'dmg':None,'stun':2,'dodgehab':None}
+    hab2arbutus={'energia':60,'cooldown':1,'dmg':40,'defensa':2,'stun':None,'dodgehab':None}
+    hab1arbutus={'energia':90,'cooldown':3,'dmg':None,'stun':2,'dodgehab':None,'defensa':None}
     egg={'hp':450,'energia':150,'dmg':[50,60],'dodge':10,'re':40,'nombre':'egg','hab2':hab2egg,'special':specialegg}
-    arbutus={'hp':600,'energia':200,'dmg':[30,45],'dodge':5,'re':50,'nombre':'arbutus','hab2':hab2arbutus} 
-    hab2froggy={'energia':40,'cooldown':2,'dmg':random.randint(80,85),'dodgehab':1}
+    arbutus={'hp':600,'energia':200,'dmg':[30,45],'dodge':5,'re':50,'nombre':'arbutus','hab2':hab2arbutus,'hab1':hab1arbutus} 
+    hab2froggy={'energia':40,'cooldown':2,'dmg':random.randint(80,85),'dodgehab':2,'defensa':None,'stun':None}
     #h1 arbutus 
     #h1 egg
     #special froggy
     #special willy
     #h1 stewiee
 
-    pelea(egg,arbutus)
+    pelea(arbutus,egg)
 
 
 main()
