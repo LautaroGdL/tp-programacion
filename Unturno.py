@@ -47,9 +47,6 @@ def seleccionarhabilidad(name, func, ability):
         if changes[0]+changes[1]+changes[2] <= 0:
             turno = True
     return changes
-        
-        
-
 
 def batalla(oc, enemy):
     "Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida"
@@ -58,7 +55,7 @@ def batalla(oc, enemy):
     enemydet = importar_personaje.importar_pj(enemy)
     egame = enemy
     ingame= oc
-    while ingame[2] > 0 and enemy[2] > 0
+    while ingame[2] > 0 and enemy[2] > 0:
         print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
         changes = seleccionarhabilidad(oc, ocdet, 1)
         echanges = seleccionarhabilidad(enemy, enemydet, 0)
@@ -67,29 +64,22 @@ def batalla(oc, enemy):
         ingame[3] = changes[2]
 
         egame[2] += (changes[1] - changes[0])
-        egame = changes[2]
+        egame[3] = changes[2]
     print("Fin")
 
 def generarenemigos(n):
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
-        if i == n-1:
-            
-
         en = importarpersonaje(0, x)
+        if i == n-1:
+            en=funcion_csv.leer_csv("lonsi.txt")
         list.append(en)
-    
-
-
-
 
 def pelea():
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigos(4)
     for i in range(4):
         batalla(personaje,)  
-        format_oc(personake[4])
 
-
-
+pelea()
