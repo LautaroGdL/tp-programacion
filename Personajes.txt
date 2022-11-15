@@ -154,7 +154,7 @@ Encontró su sombrero en un tacho de basura. Ahora cree que domina las artes arc
 ==================================
   Special: Obtiene un escudo magico (una tapa de tacho de basura) el cual desvía toda habilidad exceptuando básicos por 2 turnos- Cooldown 3 turnos Coste 120 de energia
   H1: Lanza un proyectil el cual impacta al enemigo causando 40-50 de daño, ensuciandolo (+10% de daño causado, se stackea max 50%) por 2 turnos- Cooldown 1 turnos Coste: 190 maná 
-  H2: Primer casteo: Invoca a sus poderosos esbirros (sus amigos) que lo alientan y motivan, otorgandole regeneración energia pasiva (duración 3 turnos) Recasteo:Atacan causando 60-70 de daño en total Cooldown 1 turno despues de recasteo. Coste= 20 energía
+  H2: Primer casteo: Invoca a sus poderosos esbirros (sus amigos) que lo alientan y motivan, otorgandole regeneración de hp 
 ==================================
 
 
