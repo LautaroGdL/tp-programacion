@@ -14,10 +14,10 @@ def select_character():
     while run:
         while menu:
             # tools.time(1,tools.clear())
-            #tools.clear()
+            tools.clear()
             tools.draw()
             print("Seleccione a su personaje: ")
-            print("|Gr-egg: 1| \n|Arbutus: 2| \n|Huigh: 3| \n|Stewie: 4| \n|Willy: 5| \n|Froggy: 6|")
+            print("|Gr-egg:  1| \n|Arbutus: 2| \n|Huigh:   3| \n|Stewie:  4| \n|Willy:   5| \n|Froggy:  6|")
             choice = ""
             choice = input("> ")
 
@@ -71,19 +71,23 @@ def select_character():
                 funcion_csv.escribir_csv(Froggy)
             
             else:
-                menu = False
+                tools.clear()
+                tools.draw()
                 print("Por favor elija un personaje...")
                 print()
-
+                menu = True
+                run = True
+        
             print()
-            seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n1>Aceptar \n2>Otra tecla \n> ").lower()
+            seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n\nAceptar: 1 \nVolver: Otra tecla \n> ").lower()
 
             while seleccionar_personaje:
                 tools.clear()
-                if seleccionar_personaje == "1":
+                if seleccionar_personaje == "Aceptar":
                     menu = False
                     # stats_personaje=funcion_csv.escribir_csv()
                 else:
                     seleccionar_personaje = False
+                    menu = True
 
 select_character()
