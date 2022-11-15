@@ -1,12 +1,14 @@
+import random
+
 import funcion_csv
 import seleccion_personaje
-import random
+from Personajes.Arbutus import Arbutus
+from Personajes.Froggy import Froggy
 from Personajes.Gregg import Gregg
 from Personajes.Huigh import Huigh
-from Personajes.Arbutus import Arbutus
 from Personajes.Stewie import Stewie
 from Personajes.Willy import Willy
-from Personajes.Froggy import Froggy
+
 
 def basico(mini, maxi):
     "genera el valor de daño de un basico basandose en el daño maximo y miniomo posible"
@@ -77,9 +79,11 @@ def generarenemigos(n):
         list.append(en)
 
 def pelea():
+    print("FIGHT!")
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigos(4)
     for i in range(4):
         batalla(personaje,)  
+
 
 pelea()
