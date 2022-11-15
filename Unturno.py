@@ -80,10 +80,8 @@ def generarenemigos(n):
 
 def pelea():
     print("FIGHT!")
-    personaje = importarpersonaje(1, 0)
-    lista_Enemigos = generarenemigos(4)
-    for i in range(4):
-        batalla(personaje,)  
+    # personaje = importarpersonaje(1, 0)
+    # lista_Enemigos = generarenemigos(4)
+    # for i in range(4):
+    #     batalla(personaje,)  
 
-
-pelea()
