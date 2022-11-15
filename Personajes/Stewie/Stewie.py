@@ -2,6 +2,7 @@ dmg=30
 dmg2=60
 hp=375
 energia=150
+name="Stewie"
 des="Encontró su sombrero en un tacho de basura. Ahora cree que domina las artes arcanas, pero solo son sus amigos escondidos arrojando basura."
 desh1="Bebe un elixir místico rejuvenecedor (una gaseosa que encontró en la basura) curandolo 100 de vida  Coste 100 de energia"
 desh2="Lanza un ataque psiquico. El enemigo queda impactado de tal suciedad y por ello recibe 90 de daño. turnos Coste: 70 de energía"
