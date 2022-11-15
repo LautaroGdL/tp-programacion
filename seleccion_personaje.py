@@ -86,4 +86,3 @@ def select_character(jugador, choice):
                 seleccionar_personaje = False
                 menu = True
     tools.clear()
-select_character(0,1)

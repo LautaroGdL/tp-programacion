@@ -1,7 +1,7 @@
 import random
-
 import funcion_csv
 import seleccion_personaje
+import importar_personaje
 from Personajes.Arbutus import Arbutus
 from Personajes.Froggy import Froggy
 from Personajes.Gregg import Gregg
@@ -18,7 +18,7 @@ def basico(mini, maxi):
 
 def importarpersonaje(jugador):
     "Genera las estadisticas del personaje que se elige"
-    seleccion_personaje.select_character(jugador)
+    seleccion_personaje.select_character(jugador, 0)
     stats=funcion_csv.leer_csv("load.txt")
     return stats
 
@@ -52,7 +52,6 @@ def seleccionarhabilidad(name, func, ability):
 
 def batalla(oc, enemy):
     "Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida"
-    import importar_personaje
     ocdet = importar_personaje.importar_pj(oc)
     enemydet = importar_personaje.importar_pj(enemy)
     egame = enemy
@@ -85,3 +84,4 @@ def pelea():
     # for i in range(4):
     #     batalla(personaje,)  
 
+print("Fight")

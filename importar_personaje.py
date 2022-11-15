@@ -3,25 +3,25 @@ def importar_pj(name):
     while name not in (Arbutus, Froggy, Gregg, Huigh, Lonsi, Stewie, Willy):
         name=input("Nombre no valido, elegir de vuelta, (Arbutus, Froggy, Gregg, Huigh, Lonsi, Stewie, Willy): ")
     
-    if name="Gregg":
+    if name == "Gregg":
         from Personajes.Gregg import Gregg
         return Gregg
-    elif name="Huigh":
+    elif name =="Huigh":
         from Personajes.Huigh import Huigh
         return Huigh
-    elif name="Arbutus":
+    elif name == "Arbutus":
         from Personajes.Arbutus import Arbutus
         return Arbutus
-    elif name="Stewie":
+    elif name == "Stewie":
         from Personajes.Stewie import Stewie
         return Stewie
-    elif name="Lonsi":
+    elif name == "Lonsi":
         from Personajes.Lonsi import Lonsi
         return Lonsi
-    elif name="Willy":
+    elif name == "Willy":
         from Personajes.Willy import Willy
         return Willy
-    elif name="Froggy":
+    elif name =="Froggy":
         from Personajes.Froggy import Froggy
         return Froggy
     else:
