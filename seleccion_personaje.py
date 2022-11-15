@@ -17,7 +17,7 @@ def select_character():
             #tools.clear()
             tools.draw()
             print("Seleccione a su personaje: ")
-            print("|Gr-egg: 1°| \n|Arbutus: 2°| \n|Huigh: 3°| \n|Stewie: 4°| \n|Willy: 5°| \n|Froggy: 6°|")
+            print("|Gr-egg: 1| \n|Arbutus: 2| \n|Huigh: 3| \n|Stewie: 4| \n|Willy: 5| \n|Froggy: 6|")
             choice = ""
             choice = input("> ")
 
@@ -76,7 +76,7 @@ def select_character():
                 print()
 
             print()
-            seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n1>Si \n2>No \n> ").lower()
+            seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n1>Aceptar \n2>Otra tecla \n> ").lower()
 
             while seleccionar_personaje:
                 tools.clear()
