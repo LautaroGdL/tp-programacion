@@ -4,6 +4,7 @@ from Personajes.Arbutus import Arbutus
 from Personajes.Stewie import Stewie
 from Personajes.Willy import Willy
 from Personajes.Froggy import Froggy
+from Personajes.Lonsi import Lonsi
 
 def leer_csv(archivo):
     with open(f'{archivo}', 'r') as file:
@@ -27,6 +28,13 @@ def cargar_csv():
     # HP = load_list[1][:-1]
     # ATK = load_list[2][:-1]
 
+def jefe_csv():
+    lista = [str(Lonsi.dmg),str(Lonsi.dmg2),str(Lonsi.hp),str(Lonsi.energia),str(Lonsi.name),str(Lonsi.desh1),str(Lonsi.desh2),str(Lonsi.desh3)]
+    arch = open('lonsi.txt', 'wt') 
+    for i in lista:
+        arch.write(i + ",")
+    return list
+    arch.close()
 
 # def save():
 #     list = [
@@ -41,5 +49,5 @@ def cargar_csv():
 #         f.write(item + "\n")
 #     f.close()
 
-# escribir_csv(Arbutus)
+#escribir_csv(Lonsi)
 
