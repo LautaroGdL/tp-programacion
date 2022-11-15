@@ -71,8 +71,6 @@ def select_character():
                 funcion_csv.escribir_csv(Froggy)
             
             else:
-                tools.clear()
-                tools.draw()
                 continue
         
             print()
