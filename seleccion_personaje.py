@@ -8,10 +8,8 @@ from Personajes.Willy import Willy
 from Personajes.Froggy import Froggy
  
 def select_character(jugador, choice):
-    run = True
     menu = True
     
-
     while menu:
         if jugador == 1:
             # tools.time(1,tools.clear())
@@ -81,6 +79,7 @@ def select_character(jugador, choice):
             tools.clear()
             if seleccionar_personaje == "Aceptar" or seleccionar_personaje == "1":
                 menu = False
+                seleccionar_personaje= False
                 # stats_personaje=funcion_csv.escribir_csv()
             else:
                 seleccionar_personaje = False

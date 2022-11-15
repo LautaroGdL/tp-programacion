@@ -11,19 +11,19 @@ from Personajes.Willy import Willy
 
 
 def basico(mini, maxi):
-    "genera el valor de daño de un basico basandose en el daño maximo y miniomo posible"
+    #Genera el valor de daño de un basico basandose en el daño maximo y miniomo posible
     dmg = random.randint(mini,maxi)
     return dmg 
 
 
 def importarpersonaje(jugador):
-    "Genera las estadisticas del personaje que se elige"
+    #Genera las estadisticas del personaje que se elige
     seleccion_personaje.select_character(jugador, 0)
-    stats=funcion_csv.leer_csv("load.txt")
+    stats=funcion_csv.leer_csv('load.txt')
     return stats
 
 def seleccionarhabilidad(name, func, ability):
-    "Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st"
+    #Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st
     turno = True
     while turno:
         turno = False
@@ -51,7 +51,7 @@ def seleccionarhabilidad(name, func, ability):
     return changes
 
 def batalla(oc, enemy):
-    "Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida"
+    #Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida
     ocdet = importar_personaje.importar_pj(oc)
     enemydet = importar_personaje.importar_pj(enemy)
     egame = enemy
@@ -84,4 +84,4 @@ def pelea():
     # for i in range(4):
     #     batalla(personaje,)  
 
-print("Fight")
+
