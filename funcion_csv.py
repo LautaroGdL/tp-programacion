@@ -13,11 +13,12 @@ def leer_csv(archivo):
         return variable
 
 def escribir_csv(personaje):
-    lista = [personaje.name,personaje.hp,personaje.dmg]
-    with open(f'./Personajes/{personaje}/{personaje}.txt', 'w') as file:
-        for item in lista:
-            file.write(item + ",")
-        file.close()
+    lista = [str(personaje.dmg),str(personaje.dmg2),str(personaje.hp),str(personaje.energia)]
+    arch = open('load.txt', 'wt') 
+    for i in lista:
+        arch.write(i + ",")
+    return list
+    arch.close()
 
 def cargar_csv():
     f = open("load.csv", "r")
@@ -42,10 +43,3 @@ def cargar_csv():
 
 # escribir_csv(Arbutus)
 
-lista = [Arbutus.name,Arbutus.hp,Arbutus.dmg]
-with open(f'./Personajes/Arbutus/Arbutus.txt', 'wt') as file:
-    for i in lista:
-        arch = file.write([i] + "\n")
-        arch = file.close()
-
-print()
