@@ -1,3 +1,4 @@
+name="Arbutus"
 dmg=40
 dmg2=45
 hp=600

@@ -24,52 +24,59 @@ def select_character():
             if choice == "1":
                 # tools.time(5,tools.clear())
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Gregg/Gregg_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Gregg/Gregg_ascii.txt")
                 for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Gregg.hp ,"||","Energia: ",Gregg.energia,"||","Daño: ",Gregg.dmg)
-                
+                print("Hp: ",Gregg.hp ,"||","Energia: ",Gregg.energia,"||","Daño: ",Gregg.dmg,"Daño 2: ","||",Gregg.dmg2)
+                funcion_csv.escribir_csv(Gregg)
 
             elif choice == "2":
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Arbutus/Arbutus_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Arbutus/Arbutus_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Arbutus.hp ,"||","Energia: ",Arbutus.energia,"||","Daño: ",Arbutus.dmg)
+                print("Hp: ",Arbutus.hp ,"||","Energia: ",Arbutus.energia,"||","Daño: ",Arbutus.dmg,"Daño 2: ","||",Arbutus.dmg2)
+                funcion_csv.escribir_csv(Arbutus)
 
             elif choice == "3":
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Huigh/Huigh_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Huigh/Huigh_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Huigh.hp ,"||","Energia: ",Huigh.energia,"||","Daño: ",Huigh.dmg)
+                print("Hp: ",Huigh.hp ,"||","Energia: ",Huigh.energia,"||","Daño: ",Huigh.dmg,"Daño 2: ","||",Huigh.dmg2)
+                funcion_csv.escribir_csv(Huigh)
 
             elif choice == "4":
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Stewie/Stewie_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Stewie/Stewie_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Stewie.hp ,"||","Energia: ",Stewie.energia,"||","Daño: ",Stewie.dmg)
+                print("Hp: ",Stewie.hp ,"||","Energia: ",Stewie.energia,"||","Daño: ",Stewie.dmg,"Daño 2: ","||",Stewie.dmg2)
+                funcion_csv.escribir_csv(Stewie)
 
             elif choice == "5":
                 tools.clear()
-                lista_texto=funcion_csv.traer_csv("Personajes/Willy/Willy_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Willy/Willy_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Willy.hp ,"||","Energia: ",Willy.energia,"||","Daño: ",Willy.dmg)
+                print("Hp: ",Willy.hp ,"||","Energia: ",Willy.energia,"||","Daño: ",Willy.dmg,"Daño 2: ","||",Willy.dmg2)
+                funcion_csv.escribir_csv(Willy)
 
             elif choice == "6":
                 tools.clear() 
-                lista_texto=funcion_csv.traer_csv("Personajes/Froggy/Froggy_ascii.txt")
+                lista_texto=funcion_csv.leer_csv("Personajes/Froggy/Froggy_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg)
+                print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg,"Daño 2: ","||",Froggy.dmg2)
+                funcion_csv.escribir_csv(Froggy)
 
             seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n1>Si \n2>No \n> ").lower()
 
             while seleccionar_personaje:
+                tools.clear()
                 if seleccionar_personaje == "1":
                     menu = False
+                    # stats_personaje=funcion_csv.escribir_csv()
                 else:
                     seleccionar_personaje = False
 

@@ -49,11 +49,7 @@ def iniciar_juego():
                 menu = False
                 play = True
             elif choice == "2":
-                f = open("load.csv", "r")
-                load_list = f.readlines()
-                name = load_list[0][:-1]
-                # HP = load_list[1][:-1]
-                # ATK = load_list[2][:-1]
+                
                 tools.clear()
                 tools.draw()
                 print("Bienvenido" + name + "!")
@@ -86,7 +82,7 @@ def iniciar_juego():
                 menu = True
                 #save()       
 
-lista_texto=funcion_csv.traer_csv("ascii_texto.txt")
+lista_texto=funcion_csv.leer_csv("ascii_texto.txt")
 # lista_1= lista_texto[0].split(' ')
 # print(lista_texto[0].replace("\n", ""))
 # print(lista_texto[1].replace("\n", ""))
