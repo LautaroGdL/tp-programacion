@@ -22,11 +22,17 @@ def escribir_csv(personaje):
     arch.close()
 
 def cargar_csv():
-    f = open("load.csv", "r")
+    f = open("load.txt", "r")
     load_list = f.readlines()
-    name = load_list[0][:-1]
-    # HP = load_list[1][:-1]
-    # ATK = load_list[2][:-1]
+    dmg= load_list[0]
+    dmg2= load_list[1]
+    hp = load_list[2]
+    energia = load_list[3]
+    name = load_list[4]
+    des = load_list[5]
+    desh1 = load_list[6]
+    desh2 = load_list[7]
+    desh3 = load_list[8]
 
 def jefe_csv():
     lista = [str(Lonsi.dmg),str(Lonsi.dmg2),str(Lonsi.hp),str(Lonsi.energia),str(Lonsi.name),str(Lonsi.desh1),str(Lonsi.desh2),str(Lonsi.desh3)]

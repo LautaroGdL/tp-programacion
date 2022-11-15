@@ -1,3 +1,4 @@
+import galeria_personaje
 import funcion_csv
 import tools
 import os
@@ -39,7 +40,7 @@ def iniciar_juego():
                 choice = ""
                 input("> ")
             else:
-                choice = input("# ")
+                choice = input("> ")
                 
             #Opciones
             if choice == "1":
@@ -59,6 +60,7 @@ def iniciar_juego():
             elif choice == "3":
                 tools.clear()
                 tools.draw()
+                galeria_personaje.galeria()
                 print(">")
             elif choice == "4":
                 tools.clear()
@@ -83,6 +85,10 @@ def iniciar_juego():
                 #save()       
 
 lista_texto=funcion_csv.leer_csv("ascii_texto.txt")
+def menu_p():
+    for i in range(0, len(lista_texto)):
+        print(lista_texto[i].replace("\n", ""))
+
 # lista_1= lista_texto[0].split(' ')
 # print(lista_texto[0].replace("\n", ""))
 # print(lista_texto[1].replace("\n", ""))
@@ -92,7 +98,4 @@ lista_texto=funcion_csv.leer_csv("ascii_texto.txt")
 # print(lista_texto[5].replace("\n", ""))
 # print(lista_texto[6].replace("\n", ""))
 
-def menu_p():
-    for i in range(0, len(lista_texto)):
-        print(lista_texto[i].replace("\n", ""))
 
