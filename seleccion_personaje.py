@@ -68,6 +68,7 @@ def select_character():
             seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n1>Si \n2>No \n> ").lower()
 
             while seleccionar_personaje:
+                tools.clear()
                 if seleccionar_personaje == "1":
                     menu = False
                 else:
