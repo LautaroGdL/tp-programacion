@@ -7,19 +7,20 @@ from Personajes.Stewie import Stewie
 from Personajes.Willy import Willy
 from Personajes.Froggy import Froggy
  
-def select_character():
+def select_character(jugador, nro):
     run = True
     menu = True
     
     while run:
         while menu:
-            # tools.time(1,tools.clear())
-            tools.clear()
-            tools.draw()
-            print("Seleccione a su personaje: ")
-            print("|Gr-egg:  1| \n|Arbutus: 2| \n|Huigh:   3| \n|Stewie:  4| \n|Willy:   5| \n|Froggy:  6|")
-            choice = ""
-            choice = input("> ")
+            if jugador == 1:
+                # tools.time(1,tools.clear())
+                tools.clear()
+                tools.draw()
+                print("Seleccione a su personaje: ")
+                print("|Gr-egg:  1| \n|Arbutus: 2| \n|Huigh:   3| \n|Stewie:  4| \n|Willy:   5| \n|Froggy:  6|")
+                choice = ""
+                choice = input("> ")
 
             if choice == "1":
                 # tools.time(5,tools.clear())
@@ -85,4 +86,6 @@ def select_character():
                     seleccionar_personaje = False
                     menu = True
 
-select_character()
+<<<<<<< HEAD
+select_character(0, 3)
+=
