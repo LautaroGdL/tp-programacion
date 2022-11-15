@@ -34,7 +34,7 @@ def iniciar_juego():
             print("5: Salir del juego")
 
             if rules:
-                print("Estas son las reglas del juego: \n-Elegir a un personaje con el cual jugsras el modo Arcade o Versus.-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje. \n-Modo Versus: Pelear contra otro jugador o la máquina \n-Quedar en el ranking habiendo recibido poco daño durante el Modo historia( si se llega a hacer)")
+                print("Estas son las reglas del juego: \n-Elegir a un personaje con el cual jugsras el modo Arcade o Versus.-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje. \n-Modo Versus: Pelear contra otro jugador o la máquina")
                 rules = False
                 choice = ""
                 input("> ")
@@ -49,11 +49,7 @@ def iniciar_juego():
                 menu = False
                 play = True
             elif choice == "2":
-                f = open("load.csv", "r")
-                load_list = f.readlines()
-                name = load_list[0][:-1]
-                # HP = load_list[1][:-1]
-                # ATK = load_list[2][:-1]
+                
                 tools.clear()
                 tools.draw()
                 print("Bienvenido" + name + "!")
@@ -86,7 +82,7 @@ def iniciar_juego():
                 menu = True
                 #save()       
 
-lista_texto=funcion_csv.traer_csv("ascii_texto.txt")
+lista_texto=funcion_csv.leer_csv("ascii_texto.txt")
 # lista_1= lista_texto[0].split(' ')
 # print(lista_texto[0].replace("\n", ""))
 # print(lista_texto[1].replace("\n", ""))
