@@ -13,7 +13,7 @@ def leer_csv(archivo):
         return variable
 
 def escribir_csv(personaje):
-    lista = [str(personaje.dmg),str(personaje.dmg2),str(personaje.hp),str(personaje.energia)]
+    lista = [str(personaje.dmg),str(personaje.dmg2),str(personaje.hp),str(personaje.energia),str(personaje.name),str(personaje.desh1),str(personaje.desh2),str(personaje.desh3)]
     arch = open('load.txt', 'wt') 
     for i in lista:
         arch.write(i + ",")
