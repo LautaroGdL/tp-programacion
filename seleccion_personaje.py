@@ -73,10 +73,7 @@ def select_character():
             else:
                 tools.clear()
                 tools.draw()
-                print("Por favor elija un personaje...")
-                print()
-                menu = True
-                run = True
+                continue
         
             print()
             seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n\nAceptar: 1 \nVolver: Otra tecla \n> ").lower()
