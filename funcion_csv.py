@@ -42,7 +42,7 @@ def jefe_csv():
     arch = open('lonsi.txt', 'wt') 
     for i in lista:
         arch.write(i + ",")
-    return list
+    return lista
     arch.close()
 
 # def save():
@@ -60,3 +60,11 @@ def jefe_csv():
 
 #escribir_csv(Lonsi)
 
+def imprimir_ascii(archivo):
+    character = leer_csv(archivo)
+    for i in range(0, len(character)):
+        print(character[i].replace("\n", ""))
+#imprimir_ascii("Personajes/Arbutus/Arbutus_ascii.txt")
+
+x = jefe_csv()
+print(x)
