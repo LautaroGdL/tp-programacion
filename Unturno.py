@@ -23,8 +23,8 @@ def importarpersonaje(jugador, nro):
     stats = stats[0].split(',')
     return stats
 
-def seleccionarhabilidad(name, ability, jugador):
-    #Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st
+def seleccionarhabilidad(name, ability):
+    #Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st, energy
     func=importar_personaje.importar_pj(name[4])
     turno = True
     changes = []
@@ -43,7 +43,8 @@ def seleccionarhabilidad(name, ability, jugador):
         else:
             ability=random.randint(5, 8)
         changes1, changes2, changes1 = 0, 0, 0
-
+        #Mantiene en bucle hasta que se seleccione una habilidad que puedas tirar 
+        while energia:
         if ability == 5:
             changes1, changes2, changes3 = func.habilidad1(name[2], name[3])
             changes.append(changes1)
@@ -63,7 +64,7 @@ def seleccionarhabilidad(name, ability, jugador):
             x = basico(name[0], name[1])
             changes = [x, 0, 60]
         if changes[0]+changes[1]+changes[2] <= 0:
-            if jugador == 1:
+            if ability == 1:
                 print("No tiene suficiente energia, selecciona otra habilidad. ")
             turno = True
         return changes
@@ -79,18 +80,24 @@ def batalla(ingame, enemy):
     print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
     while int(ingame[2]) > 0 and int(enemy[2]) > 0:
         #Seleccion de habilidad del Own Character, y la pc
-        changes = seleccionarhabilidad(ingame, 1, 1)
-        echanges = seleccionarhabilidad(enemy, 0, 0)
+        changes = seleccionarhabilidad(ingame, 1)
+        echanges = seleccionarhabilidad(enemy, 0)
 
         #Cambios en personaje principal
         ingame[2] += (changes[1] - changes[0])
         ingame[3] = changes[2]
-        print("vida: ", ingame[2], "energia: ", ingame[3])
+        print("Daño realizado: ", changes[0])
+        
 
         #Cambios en personaje enemigo
         enemy[2] += (echanges[1] - echanges[0])
         enemy[3] = echanges[2]
-        print("vida: ", enemy[2], "energia: ",  enemy[3])
+        #Display de daño 
+        print("Daño recibido: ", echanges[0])
+        print("ENEMIGO:")
+        print("vida: ", enemy[2], "|energia: ",  enemy[3])
+        print("TU:")
+        print("vida: ", ingame[2], "|energia: ", ingame[3])
     print("Fin")
 
 def generarenemigos(n):
@@ -105,7 +112,7 @@ def generarenemigos(n):
     return list
 
 def pelea():
-    #Programa principal, mezcla de todo
+    #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigos(4)
