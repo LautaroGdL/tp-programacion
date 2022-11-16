@@ -36,7 +36,8 @@ def iniciar_juego():
             if choice == "1":
                 tools.clear()
                 tools.draw()
-                name = input("Escribe tu nombre: ")
+                user = input("Escribe tu nombre: ")
+                funcion_csv.guardar_nombre(user)
                 # Unturno.pelea()
                 menu = False
                 play = True
@@ -51,11 +52,9 @@ def iniciar_juego():
                 rules = True
             elif choice == "4":
                 quit()
-                
-        print("Juego terminado")
-        
-        while play:
-                
+                  
+    
+        while play:  
             tools.clear()
             Unturno.pelea()
             desicion = input("Desea volver a jugar? (y/n): ")

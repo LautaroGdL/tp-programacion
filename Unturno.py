@@ -39,7 +39,7 @@ def seleccionarhabilidad(name, ability):
             ability = print("|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4| ")
             ability = input(">")
             while ability not in ("2", "3", "4", "1"):
-                ability = print("Movimiento no valido, porfavor volver a seleccionar movimiento:\n|Ataque  =   1||Habilidad = 2|\n,|Habilidad = 3||Habilidad = 4|")
+                ability = print("Movimiento no valido, porfavor volver a seleccionar movimiento:\n|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4|")
                 ability = input(">")
             if ability in ("2","3","4"):
                 ability = int(ability)
@@ -132,8 +132,10 @@ def batalla(ingame, enemy):
 
         Battle = False
     print()
-    if ingame[2] >= 0:
-        print(f"Fin del combate, has ganado {menu_principal.name}!")
+    if ingame[2] > 0:
+        usuario = funcion_csv.leer_ascii("name.txt")
+        name = usuario[0].replace(",", "")
+        print(f"Fin del combate, has ganado {name}!")
         ingame[2] += 300
     else:
         print("Fin del combate, has perdido.")

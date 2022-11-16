@@ -38,6 +38,14 @@ def escribir_csv(personaje):
     return list
     arch.close()
 
+def guardar_nombre(name):
+    lista = [name]
+    arch = open(f'Ascii/name.txt', 'wt') 
+    for i in lista:
+        arch.write(i + ",")
+    return list
+
+
 def cargar_csv():
     #Lee el archivo, lee el listado y asigna cada columna como una variable(deberia)
     f = open("Ascii/load.txt", "r")
