@@ -1,5 +1,6 @@
 import galeria_personaje
 import funcion_csv
+import Unturno
 import tools
 import os
 
@@ -17,15 +18,14 @@ def iniciar_juego():
             print()
             tools.draw()
             print("1: Arcade")
-            print("2: Versus")
-            print("3: Galeria")
-            print("4: Reglas")
-            print("5: Salir del juego")
+            print("2: Galeria")
+            print("3: Reglas")
+            print("4: Salir del juego")
             print()
             tools.draw()
             if rules:
                 tools.clear()
-                print("Reglas del juego: \n-Elegir a un personaje con el cual jugaras el modo Arcade o Versus.\n-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje. \n-Modo Versus: Pelear contra otro jugador o la máquina \n\nDiviertete y gana!!!")
+                print("Reglas del juego: \n-Elegir a un personaje con el cual jugaras el modo Arcade\n-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje.\n\nDiviertete y gana!!!")
                 rules = False
                 choice = ""
                 input("> ")
@@ -37,26 +37,19 @@ def iniciar_juego():
                 tools.clear()
                 tools.draw()
                 name = input("Escribe tu nombre: ")
+                Unturno.pelea()
                 menu = False
                 play = True
             elif choice == "2":
-                
-                tools.clear()
-                tools.draw()
-                print("Bienvenido" + name + "!")
-                print("> ")
-                menu = False
-                play = True
-            elif choice == "3":
                 tools.clear()
                 tools.draw()
                 galeria_personaje.galeria()
                 print(">")
-            elif choice == "4":
+            elif choice == "3":
                 tools.clear()
                 tools.draw()
                 rules = True
-            elif choice == "5":
+            elif choice == "4":
                 quit()
 
         while play:

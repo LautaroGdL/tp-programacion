@@ -121,4 +121,3 @@ def pelea():
         batalla(aux_personaje, lista_Enemigos[i])  
 
 
-pelea()
