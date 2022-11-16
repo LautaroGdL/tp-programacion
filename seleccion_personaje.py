@@ -6,7 +6,7 @@ from Personajes.Arbutus import Arbutus
 from Personajes.Stewie import Stewie
 from Personajes.Willy import Willy
 from Personajes.Froggy import Froggy
-from Personajes.Lonsi import Lonsi
+
 
  
 def select_character(jugador, choice):
@@ -17,7 +17,10 @@ def select_character(jugador, choice):
             # tools.time(1,tools.clear())
             tools.clear()
             tools.draw()
+            seleccion_p()
+            tools.draw()
             print("|Gr-egg:  1||Arbutus: 2||Huigh:   3||Stewie:  4||Willy:   5||Froggy:  6||Lonsi:   7|")
+            tools.draw()
             choice = ""
             choice = input("> ")
 
@@ -97,3 +100,8 @@ def select_character(jugador, choice):
                     seleccionar_personaje = False
                     menu = True
     tools.clear()
+
+seleccion_texto=funcion_csv.leer_csv("seleccion_ascii.txt")
+def seleccion_p():
+    for i in range(0, len(seleccion_texto)):
+        print(seleccion_texto[i].replace("\n", ""))
