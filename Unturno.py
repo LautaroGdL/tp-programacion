@@ -78,8 +78,6 @@ def seleccionarhabilidad(name, ability):
 
 def batalla(ingame, enemy):
     #Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida
-    print(ingame)
-    print(enemy)
     print("Enemigo: ", enemy[4] )
     ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
@@ -133,6 +131,5 @@ def pelea():
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigos(2)
-    print(lista_Enemigos)
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])  
