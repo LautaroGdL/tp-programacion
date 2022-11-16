@@ -6,6 +6,7 @@ from Personajes.Arbutus import Arbutus
 from Personajes.Stewie import Stewie
 from Personajes.Willy import Willy
 from Personajes.Froggy import Froggy
+from Personajes.Lonsi import Lonsi
 
 
  
@@ -19,7 +20,7 @@ def select_character(jugador, choice):
             tools.draw()
             seleccion_p()
             tools.draw()
-            print("|Gr-egg:  1||Arbutus: 2||Huigh:   3||Stewie:  4||Willy:   5||Froggy:  6||Lonsi:   7|")
+            print("|Gr-egg:  1||Arbutus: 2||Huigh:   3||Stewie:  4||Willy:   5||Froggy:  6|")
             tools.draw()
             choice = ""
             choice = input("> ")
@@ -67,11 +68,20 @@ def select_character(jugador, choice):
 
         elif choice == "6":
             tools.clear() 
-            lista_texto=funcion_csv.leer_csv("Personajes/Froggy/Froggy_ascii.txt")
+            lista_texto=funcion_csv.jefe_csv()
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg,"Daño 2: ","||",Froggy.dmg2,"\n" + Froggy.des)
             funcion_csv.escribir_csv(Froggy)
+
+        elif choice == "lonsi":
+            tools.clear() 
+            lista_texto=funcion_csv.leer_ascii("lonsi.txt")
+            for i in range(0, len(lista_texto)):
+                    print(lista_texto[i].replace("\n", ""))
+            print("Hp: ",Lonsi.hp ,"||","Energia: ",Lonsi.energia,"||","Daño: ",Lonsi.dmg,"Daño 2: ","||",Lonsi.dmg2,"\n" + Lonsi.des)
+            
+
 
         elif choice == "0":
             menu = False
@@ -104,3 +114,5 @@ seleccion_texto=funcion_csv.leer_ascii("seleccion_ascii.txt")
 def seleccion_p():
     for i in range(0, len(seleccion_texto)):
         print(seleccion_texto[i].replace("\n", ""))
+
+select_character(1,"lonsi")
