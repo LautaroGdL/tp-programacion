@@ -2,7 +2,7 @@ dmg=50
 dmg2=60
 hp=450
 energia=150
-name="Gr-egg"
+name="Gregg"
 des="Ganó su apodo por su extravagante forma de hablar. \n Su arma de elección es cuchara, su mejor amigo pez espada. \n Forman un equipo muy balanceado y nutritivo (?)"
 desh1="Gr-egg pega un cabezaso el cual infringe su daño base + 20. Coste=80 energia"
 desh2="Cuchara le roba vida al enemigo y cura a Gr-egg.  Coste=60 energía"

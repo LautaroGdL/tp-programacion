@@ -19,11 +19,13 @@ def basico(mini, maxi):
 def importarpersonaje(jugador, nro):
     #Genera las estadisticas del personaje que se elige
     seleccion_personaje.select_character(jugador, nro)
-    stats=funcion_csv.escribir_csv('load.txt')
+    stats=funcion_csv.leer_csv("load.txt")
+    stats = stats[0].strip(',')
     return stats
 
-def seleccionarhabilidad(name, func, ability):
+def seleccionarhabilidad(name, ability):
     #Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st
+    func=importar_personaje.importar_pj(name)
     turno = True
     while turno:
         turno = False
@@ -50,17 +52,12 @@ def seleccionarhabilidad(name, func, ability):
             turno = True
     return changes
 
-def batalla(oc, enemy):
+def batalla(ingame, enemy):
     #Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida
-    egame, ingame = enemy, oc
-    print(oc)
-    print(oc[4])
-    ocdet = importar_personaje.importar_pj(oc[4])
-    enemydet = importar_personaje.importar_pj(enemy[4])
-    while ingame[2] > 0 and enemy[2] > 0:
+    while int(ingame[2]) > 0 and int(enemy[2] > 0):
         print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
-        changes = seleccionarhabilidad(oc, ocdet, 1)
-        echanges = seleccionarhabilidad(enemy, enemydet, 0)
+        changes = seleccionarhabilidad(ingame[4], 1)
+        echanges = seleccionarhabilidad(enemy[4], 0)
         #Cambios en personaje principal
         ingame[2] += (changes[1] - changes[0])
         ingame[3] = changes[2]
@@ -82,11 +79,9 @@ def generarenemigos(n):
 def pelea():
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
-    print(personaje)
-    # lista_Enemigos = generarenemigos(4)
-    # print(personaje)
-    # for i in range(4):
-    #    batalla(personaje, lista_Enemigos[i])  
+    lista_Enemigos = generarenemigos(4)
+    for i in range(4):
+        batalla(personaje, lista_Enemigos[i])  
 
 
 pelea()
