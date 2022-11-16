@@ -14,7 +14,7 @@ def habilidad1(hp,energia):
         heal=100
         energia=energia-100
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
+        dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
 def habilidad2(hp,energia):
@@ -23,7 +23,7 @@ def habilidad2(hp,energia):
         dmg_turno=90
         energia=energia-70
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
+        dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
 def habilidad3(hp,energia):
@@ -32,7 +32,7 @@ def habilidad3(hp,energia):
         dmg_turno=60
         energia=energia-20
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
+        dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
 win="Luego de su epica batalla contra Lonsi a Stewie se le cayó el sombrero. En ese momento fue testigo de la verdad; el sombrero no era mágico.\n Todos sus hechizos e invocaciones eran simplemente una farsa. Todo montado por sus amigos, quienes desde los arbustos, lo apoyaban en cada batalla.\n Su sueño de ser el rey de los magos se desplomó.\n Pero esto no le importó, pues se dió cuenta de algo revelador. No existe mayor magia que la amistad.\n"

@@ -13,8 +13,7 @@ def habilidad1 (hp,energia):
         dmg_turno=100
         energia=energia-90
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
-        dmg_turno,hp,energia=0,0,0
+        dmg_turno,heal,energia=0,0,0
     return (dmg_turno,heal,energia)
 
 def habilidad2 (hp,energia):
@@ -24,8 +23,7 @@ def habilidad2 (hp,energia):
         energia=energia-90
         dmg_turno=0
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
-        dmg_turno,hp,energia=0,0,0
+        dmg_turno,heal,energia=0,0,0
     return (dmg_turno,heal,energia)
 
 def habilidad3 (hp,energia):
@@ -38,8 +36,7 @@ def habilidad3 (hp,energia):
             dmg_turno=dmg_turno+dtimes
         energia=energia-60
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
-        dmg_turno,hp,energia=0,0,0
+        dmg_turno,heal,energia=0,0,0
     return (dmg_turno,heal,energia)
 win="Arbutus lo supo desde el principio. Lonsi no era un león. Era una flor. Lo dedujo gracias a sus bastos conocimientos en botánica (y a que se le cayó el disfraz luego de ser derrotado).\n Pero el vió algo en Lonsi que nadie hizo, a un alma gentil pero asustada, alguien con defectos pero con buenas intenciones. El vio a un gran amigo.\n Comenzaron a hablar y su conexión fue natural, sintieron que tenían las mismas raíces (no porque ambos fuesen plantas).\n El tiempo pasó.... Hoy en día son un dúo muy famoso que da conferencias sobre el medio ambiente. Sus charlas son profundas y demuestran mucho experiencia sobre el campo, el problema es que hablan tanto que nunca terminan.\n"
 lose="No fue capaz de desenmascarar la farsa de Lonsi. El estaba seguro de que era una flor, pero nadie le creía.\n Ello se volvió la única cosa de la que hablaba. No podía parar. No hasta que la gente lo supiera. Habló y habló, pero nadie le creyó.\n Con el tiempo fue tachado de paranoico, un loco más. Perdió tanto su trabajo como su cordura en el camino. \n Se lo puede ver por los prados repitiendo lo mismo una y otra vez: '¡Lonsi es una flor ¿No lo ven? No le crean al gobierno!\n'"
