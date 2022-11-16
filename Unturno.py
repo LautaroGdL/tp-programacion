@@ -121,7 +121,7 @@ def generarenemigos(n):
     for i in range(2):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
-        if i == n+2:
+        if i == n+3:
             en=funcion_csv.leer_ascii("lonsi.txt")
         list.append(en)
     return list
@@ -130,6 +130,6 @@ def pelea():
     #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
-    lista_Enemigos = generarenemigos(2)
+    lista_Enemigos = generarenemigos(3)
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])  
