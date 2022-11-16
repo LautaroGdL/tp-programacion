@@ -37,7 +37,7 @@ def iniciar_juego():
                 tools.clear()
                 tools.draw()
                 name = input("Escribe tu nombre: ")
-                Unturno.pelea()
+                # Unturno.pelea()
                 menu = False
                 play = True
             elif choice == "2":
@@ -51,21 +51,19 @@ def iniciar_juego():
                 rules = True
             elif choice == "4":
                 quit()
-
+                
+        print("Juego terminado")
+        
         while play:
-            #save()#autosave
                 
             tools.clear()
-            tools.draw()
-            print("0 - Guardar y salir")
-            tools.draw()
+            Unturno.pelea()
 
-            dest = input("#")
-
-            if dest == "0":
+            desicion = input("Desea volver a jugar? (y/n): ")
+            if desicion == "0":
                 play = False
                 menu = True
-                #save()       
+                       
 
 lista_texto=funcion_csv.leer_csv("Ascii/ascii_texto.txt")
 def menu_p():
