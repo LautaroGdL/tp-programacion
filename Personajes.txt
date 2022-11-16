@@ -2,7 +2,7 @@ Glosario:
   HP: Vida Base
   DMG: Daño Base
   Energia: Energia Max
-  Dodge: Probabilidad esquivar daño completo
+  Dodge: Probabilidad esquivar daño completo.
 
 
 ----------------------------------
