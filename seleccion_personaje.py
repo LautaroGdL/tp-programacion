@@ -115,4 +115,3 @@ def seleccion_p():
     for i in range(0, len(seleccion_texto)):
         print(seleccion_texto[i].replace("\n", ""))
 
-select_character(1,"lonsi")

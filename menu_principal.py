@@ -58,7 +58,6 @@ def iniciar_juego():
                 
             tools.clear()
             Unturno.pelea()
-
             desicion = input("Desea volver a jugar? (y/n): ")
             if desicion == "n":
                 play = False
