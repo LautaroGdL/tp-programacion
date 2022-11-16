@@ -3,6 +3,7 @@ import funcion_csv
 import seleccion_personaje
 import importar_personaje
 import bars
+import tools
 from Personajes.Arbutus import Arbutus
 from Personajes.Froggy import Froggy
 from Personajes.Gregg import Gregg
@@ -79,11 +80,13 @@ def batalla(ingame, enemy):
     #Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida
     print(ingame)
     print(enemy)
-    print("Enemigo:", enemy[4] )
+    print("Enemigo: ", enemy[4] )
     ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
     print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
     while ingame[2] > 0 and enemy[2] > 0:
+        tools.clear
+
         #Seleccion de habilidad del Own Character, y la pc
         changes = seleccionarhabilidad(ingame, 1)
         echanges = seleccionarhabilidad(enemy, 0)
@@ -107,19 +110,20 @@ def batalla(ingame, enemy):
         tubar = bars.gen_barras(ingame[2], ingame[3])
         bars.mostrar_barras(tubar)
         print("vida: ", ingame[2], "|energia: ", ingame[3])
+
     print("Fin del combate")
     if ingame[2] > 0:
-        ingame[2] >= 0
+        ingame[2] += 300
 
 
 
 def generarenemigos(n):
     #Genera una lista de 5 enemigos, el ultimo siempre sera lonsi
     list=[]
-    for i in range(n):
+    for i in range(2):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
-        if i == n:
+        if i == n+2:
             en=funcion_csv.leer_ascii("lonsi.txt")
         list.append(en)
     return list
@@ -128,9 +132,7 @@ def pelea():
     #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
-    lista_Enemigos = generarenemigos(0)
+    lista_Enemigos = generarenemigos(2)
     print(lista_Enemigos)
     for i in range(len(lista_Enemigos)-1):
-        aux_personaje = personaje
-        batalla(aux_personaje, lista_Enemigos[i])  
-    x=("INput")
+        batalla(personaje, lista_Enemigos[i])  

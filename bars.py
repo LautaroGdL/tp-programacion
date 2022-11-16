@@ -13,11 +13,7 @@ def mostrar_barras(estadisticas):
     for i in range(0, len(estadisticas[0])):
         print(estadisticas[0][i].replace(",", ""),end="")
     print()
+    print(" ")
     for i in range(0, len(estadisticas[1])):
         print(estadisticas[1][i].replace(",", ""),end="")
     print()
-
-
-x = gen_barras(20,15)
-mostrar_barras(x)
-
