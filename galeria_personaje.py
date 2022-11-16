@@ -19,7 +19,8 @@ def galeria():
             tools.draw()
             galeria_p()
             print()
-            print("|Gr-egg:  1||Arbutus: 2||Huigh:   3||Stewie:  4||Willy:   5||Froggy:  6|||Lonsi:   7|")
+            tools.draw()
+            print("|Gr-egg:  1|\n|Arbutus: 2|\n|Huigh:   3|\n|Stewie:  4|\n|Willy:   5|\n|Froggy:  6|\n|Lonsi:   7|")
             tools.draw()
             choice = input("> ")
             
@@ -73,7 +74,7 @@ def galeria():
                         print(lista_texto[i].replace("\n", ""))
                 print("Nombre: ",Lonsi.name,"\n" + Lonsi.des)
             
-            elif choice == "0":
+            elif choice == "":
                 run = False
                 menu = False
                 break

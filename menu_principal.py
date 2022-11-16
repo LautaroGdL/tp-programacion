@@ -3,20 +3,6 @@ import funcion_csv
 import tools
 import os
 
-
-# def save():
-#     list = [
-#         name,
-#         str(HP),
-#         str(ATK)
-#     ]
-
-#     f = open("load.csv", "w")
-
-#     for item in list:
-#         f.write(item + "\n")
-#     f.close()
-
 def iniciar_juego():
     run = True
     menu = True
@@ -29,12 +15,14 @@ def iniciar_juego():
             tools.draw()
             menu_p()
             print()
+            tools.draw()
             print("1: Arcade")
             print("2: Versus")
             print("3: Galeria")
             print("4: Reglas")
             print("5: Salir del juego")
-
+            print()
+            tools.draw()
             if rules:
                 tools.clear()
                 print("Reglas del juego: \n-Elegir a un personaje con el cual jugaras el modo Arcade o Versus.\n-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje. \n-Modo Versus: Pelear contra otro jugador o la máquina \n\nDiviertete y gana!!!")
