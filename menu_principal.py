@@ -60,9 +60,11 @@ def iniciar_juego():
             Unturno.pelea()
 
             desicion = input("Desea volver a jugar? (y/n): ")
-            if desicion == "0":
+            if desicion == "n":
                 play = False
                 menu = True
+            elif desicion == "y":
+                play = True
                        
 
 lista_texto=funcion_csv.leer_csv("Ascii/ascii_texto.txt")

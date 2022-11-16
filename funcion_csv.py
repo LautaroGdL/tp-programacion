@@ -22,6 +22,13 @@ def leer_csv(archivo):
         #     print(row)
         return variable
 
+def personaje_txt(archivo):
+    #Lee el archivo de texto dentro de Dibujos y lo imprime
+    with open(f'Dibujos/{archivo}_ascii.txt', 'r') as file:
+        variable = file.readlines()
+        for i in range(0, len(variable)):
+                        print(variable[i].replace("\n", ""))
+
 def escribir_csv(personaje):
     #Escribe un archivo temporal que guarda las variables del personaje deseado para luego ser llamado como una lista
     lista = [str(personaje.dmg),str(personaje.dmg2),str(personaje.hp),str(personaje.energia),str(personaje.name),str(personaje.desh1),str(personaje.desh2),str(personaje.desh3),str(personaje.win),str(personaje.lose)]

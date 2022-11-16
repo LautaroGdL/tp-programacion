@@ -74,7 +74,6 @@ def select_character(jugador, choice):
             funcion_csv.escribir_csv(Froggy)
 
         elif choice == "0":
-            run = False
             menu = False
             seleccionar_personaje= False
             # stats_personaje=funcion_csv.escribir_csv()
