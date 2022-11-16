@@ -19,7 +19,7 @@ def basico(mini, maxi):
 def importarpersonaje(jugador, nro):
     #Genera las estadisticas del personaje que se elige
     seleccion_personaje.select_character(jugador, nro)
-    stats=funcion_csv.leer_csv("load.txt")
+    stats=funcion_csv.leer_csv("Ascii/load.txt")
     stats = stats[0].split(',')
     return stats
 
@@ -44,7 +44,6 @@ def seleccionarhabilidad(name, ability):
             ability=random.randint(5, 8)
         changes1, changes2, changes1 = 0, 0, 0
         #Mantiene en bucle hasta que se seleccione una habilidad que puedas tirar 
-        while energia:
         if ability == 5:
             changes1, changes2, changes3 = func.habilidad1(name[2], name[3])
             changes.append(changes1)
@@ -67,7 +66,7 @@ def seleccionarhabilidad(name, ability):
             if ability == 1:
                 print("No tiene suficiente energia, selecciona otra habilidad. ")
             turno = True
-        return changes
+    return changes
 
 
 def batalla(ingame, enemy):
@@ -107,7 +106,7 @@ def generarenemigos(n):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
         if i == n-1:
-            en=funcion_csv.leer_csv("lonsi.txt")
+            en=funcion_csv.leer_csv("Ascii/lonsi.txt")
         list.append(en)
     return list
 
