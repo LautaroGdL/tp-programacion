@@ -23,7 +23,7 @@ def importarpersonaje(jugador, nro):
     stats = stats[0].split(',')
     return stats
 
-def seleccionarhabilidad(name, ability):
+def seleccionarhabilidad(name, ability, jugador):
     #Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st
     func=importar_personaje.importar_pj(name[4])
     turno = True
@@ -63,6 +63,8 @@ def seleccionarhabilidad(name, ability):
             x = basico(name[0], name[1])
             changes = [x, 0, 60]
         if changes[0]+changes[1]+changes[2] <= 0:
+            if jugador == 1:
+                print("No tiene suficiente energia, selecciona otra habilidad. ")
             turno = True
         return changes
 
@@ -76,19 +78,23 @@ def batalla(ingame, enemy):
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
     print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
     while int(ingame[2]) > 0 and int(enemy[2]) > 0:
-        changes = seleccionarhabilidad(ingame, 1)
-        echanges = seleccionarhabilidad(enemy, 0)
+        #Seleccion de habilidad del Own Character, y la pc
+        changes = seleccionarhabilidad(ingame, 1, 1)
+        echanges = seleccionarhabilidad(enemy, 0, 0)
+
         #Cambios en personaje principal
         ingame[2] += (changes[1] - changes[0])
         ingame[3] = changes[2]
         print("vida: ", ingame[2], "energia: ", ingame[3])
 
+        #Cambios en personaje enemigo
         enemy[2] += (echanges[1] - echanges[0])
         enemy[3] = echanges[2]
         print("vida: ", enemy[2], "energia: ",  enemy[3])
     print("Fin")
 
 def generarenemigos(n):
+    #Genera una lista de 5 enemigos, el ultimo siempre sera lonsi
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
@@ -99,6 +105,7 @@ def generarenemigos(n):
     return list
 
 def pelea():
+    #Programa principal, mezcla de todo
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigos(4)
