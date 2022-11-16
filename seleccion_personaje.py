@@ -68,7 +68,7 @@ def select_character(jugador, choice):
 
         elif choice == "6":
             tools.clear() 
-            lista_texto=funcion_csv.jefe_csv()
+            lista_texto=funcion_csv.leer_csv("Personajes/Froggy/Froggy_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg,"Daño 2: ","||",Froggy.dmg2,"\n" + Froggy.des)
@@ -76,7 +76,7 @@ def select_character(jugador, choice):
 
         elif choice == "lonsi":
             tools.clear() 
-            lista_texto=funcion_csv.leer_ascii("lonsi.txt")
+            lista_texto=funcion_csv.jefe_csv()
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Lonsi.hp ,"||","Energia: ",Lonsi.energia,"||","Daño: ",Lonsi.dmg,"Daño 2: ","||",Lonsi.dmg2,"\n" + Lonsi.des)
