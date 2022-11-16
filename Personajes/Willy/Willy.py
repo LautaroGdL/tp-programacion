@@ -23,7 +23,7 @@ def habilidad2(hp,energia):
     import random
     if energia>=30:
         for i in range (3):
-            dtimes=random.randint(15-20)
+            dtimes=random.randint(15, 20)
             dmg_turno=dmg_turno+dtimes
         energia=energia-30
     else:

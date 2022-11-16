@@ -28,8 +28,9 @@ def seleccionarhabilidad(name, ability):
     func=importar_personaje.importar_pj(name[4])
     turno = True
     changes = []
+    jugador = ability
     while turno:
-        turno = False
+        turno = True
         if ability != 0:
             
             ability = input("Ingresar movimiento: atk, 1, 2, 3: ")
@@ -49,23 +50,26 @@ def seleccionarhabilidad(name, ability):
             changes.append(changes1)
             changes.append(changes2)
             changes.append(changes3)
+            if changes[1] == 0 and changes[0] == 0 and jugador == 1:
+                print("No tiene suficiente energia, selecciona otra habilidad. ")
         elif ability == 6:
             changes1, changes2, changes3 = func.habilidad2(name[2], name[3])
             changes.append(changes1)
             changes.append(changes2)
             changes.append(changes3)
+            if changes[1] == 0 and changes[0] == 0 and jugador == 1:
+                print("No tiene suficiente energia, selecciona otra habilidad. ")
         elif ability == 7:
             changes1, changes2, changes3 = func.habilidad3(name[2], name[3])
             changes.append(changes1)
             changes.append(changes2)
             changes.append(changes3)
+            if changes[1] == 0 and changes[0] == 0 and jugador == 1:
+                print("No tiene suficiente energia, selecciona otra habilidad. ")
         elif ability == 8:
             x = basico(name[0], name[1])
             changes = [x, 0, name[3]+60]
-        if changes[0]+changes[1]+changes[2] <= 0:
-            if ability == 1:
-                print("No tiene suficiente energia, selecciona otra habilidad. ")
-        else:
+        if changes[0] != 0 or changes[1] != 0:
             turno = False
     return changes
 
@@ -78,7 +82,7 @@ def batalla(ingame, enemy):
     ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
     print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
-    while int(ingame[2]) > 0 and int(enemy[2]) > 0:
+    while ingame[2] > 0 and enemy[2] > 0:
         #Seleccion de habilidad del Own Character, y la pc
         changes = seleccionarhabilidad(ingame, 1)
         echanges = seleccionarhabilidad(enemy, 0)
@@ -98,7 +102,11 @@ def batalla(ingame, enemy):
         print("vida: ", enemy[2], "|energia: ",  enemy[3])
         print("TU:")
         print("vida: ", ingame[2], "|energia: ", ingame[3])
-    print("Fin")
+    print("Fin del combate")
+    if ingame[2] > 0:
+        ingame[2] >= 0
+
+
 
 def generarenemigos(n):
     #Genera una lista de 5 enemigos, el ultimo siempre sera lonsi
@@ -106,7 +114,7 @@ def generarenemigos(n):
     for i in range(n):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
-        if i == n-1:
+        if i == n:
             en=funcion_csv.leer_ascii("lonsi.txt")
         list.append(en)
     return list
@@ -115,8 +123,8 @@ def pelea():
     #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
-    lista_Enemigos = generarenemigos(4)
-    for i in range(4):
+    lista_Enemigos = generarenemigos(0)
+    for i in range(len(lista_Enemigos)-1):
         aux_personaje = personaje
         batalla(aux_personaje, lista_Enemigos[i])  
 
