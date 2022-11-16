@@ -14,7 +14,6 @@ def habilidad1(hp,energia):
         dmg_turno=120
         energia=energia-100
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
@@ -26,7 +25,6 @@ def habilidad2(hp,energia):
         heal=dmg_turno+(dmg_turno*(40/100))
         energia=energia-50
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
@@ -37,7 +35,6 @@ def habilidad3(hp,energia):
         dmg_turno=random.randint(90,110)
         energia=energia-40
     else:
-        print("No tienes energía suficiente, elegí otro movimiento\n")
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
