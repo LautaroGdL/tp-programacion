@@ -6,9 +6,17 @@ from Personajes.Willy import Willy
 from Personajes.Froggy import Froggy
 from Personajes.Lonsi import Lonsi
 
-def leer_csv(archivo):
+def leer_ascii(archivo):
     #Lee el archivo de texto y lo guarda como lista
     with open(f'Ascii/{archivo}', 'r') as file:
+        variable = file.readlines()
+        # for row in hoja_personaje:
+        #     print(row)
+        return variable
+
+def leer_csv(archivo):
+    #Lee el archivo de texto y lo guarda como lista
+    with open(f'{archivo}', 'r') as file:
         variable = file.readlines()
         # for row in hoja_personaje:
         #     print(row)
