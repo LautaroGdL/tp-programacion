@@ -28,6 +28,7 @@ def iniciar_juego():
             tools.clear()
             tools.draw()
             menu_p()
+            print()
             print("1: Arcade")
             print("2: Versus")
             print("3: Galeria")
