@@ -54,7 +54,7 @@ def seleccionarhabilidad(name, ability):
 
 def batalla(ingame, enemy):
     #Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida
-    while int(ingame[2]) > 0 and int(enemy[2] > 0):
+    while int(ingame[2]) > 0 and int(enemy[2]) > 0):
         print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
         changes = seleccionarhabilidad(ingame[4], 1)
         echanges = seleccionarhabilidad(enemy[4], 0)
