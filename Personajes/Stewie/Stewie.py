@@ -36,5 +36,6 @@ def habilidad3(energia):
         print("No tienes energía suficiente")
     return(dmg_turno, energia)
 
-
+win="Luego de su epica batalla contra Lonsi a Stewie se le cayó el sombrero. En ese momento fue testigo de la verdad; el sombrero no era mágico.\n Todos sus hechizos e invocaciones eran simplemente una farsa. Todo montado por sus amigos, quienes desde los arbustos, lo apoyaban en cada batalla.\n Su sueño de ser el rey de los magos se desplomó.\n Pero esto no le importó, pues se dió cuenta de algo revelador. No existe mayor magia que la amistad.\n"
+lose="Tras su derrota Stewie creyó que no era lo suficientemente fuerte para ganar.\n Por lo que entrenó y entrenó.\n Pero nunca mejoró y un día su magia desapareció.\n"
 

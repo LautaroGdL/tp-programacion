@@ -42,3 +42,6 @@ def habilidad3(energia):
         print("No tienes energía suficiente, elegí otra movimiento")
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
+
+win="Su victoria ante Lonsi no significaba nada para Froggy.\n Todo este torneo no era mas que un mal necesario para llevar a cabo su verdadero plan.\n Un plan repleto de odio, uno que viene planificando cada detalle desde pequeño.\n Esto solo lo podría llevar a cabo alguien tan temerario como un sapo origami podría hacer:\n Declararle la guerra al aire.\n"
+lose="Lonsi asestó el ultimo golpe. Y con el Froggy desapareció.\n Los espectadores creerían que fue obra de Lonsi. Pero no.\n Fue el viento. El viento se llevó a Froggy.\n"
