@@ -155,7 +155,15 @@ def generarenemigos(n):
         list.append(en)
     return list
 
-def pelea():
+def arcade():
+    #Programa principal, mezcla de todos las funciones anteriores 
+    print("FIGHT!")
+    personaje = importarpersonaje(1, 0)
+    lista_Enemigos = generarenemigos(2)
+    for i in range(len(lista_Enemigos)-1):
+        batalla(personaje, lista_Enemigos[i])
+
+def versus():
     #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
