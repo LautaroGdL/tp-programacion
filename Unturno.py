@@ -12,7 +12,7 @@ from Personajes.Willy import Willy
 
 def basico(mini, maxi):
     #Genera el valor de daño de un basico basandose en el daño maximo y miniomo posible
-    dmg = random.randint(mini,maxi)
+    dmg = random.randint(int(mini),int(maxi))
     return dmg 
 
 
@@ -20,44 +20,49 @@ def importarpersonaje(jugador, nro):
     #Genera las estadisticas del personaje que se elige
     seleccion_personaje.select_character(jugador, nro)
     stats=funcion_csv.leer_csv("load.txt")
-    stats = stats[0].strip(',')
+    stats = stats[0].split(',')
     return stats
 
 def seleccionarhabilidad(name, ability):
     #Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st
-    func=importar_personaje.importar_pj(name)
+    func=importar_personaje.importar_pj(name[4])
     turno = True
     while turno:
         turno = False
         if ability != 0:
             
-            ability = int(input("Ingresar movimiento: atk, 1, 2, 3"))
-            while ability not in (1, 2, 3, "atk"):
-                ability = int(input("Movimiento? NO VALIDO, porfavor volver a ingresar ;). (1, 2, 3, atk)"))
+            ability = input("Ingresar movimiento: atk, 1, 2, 3: ")
+            while ability not in ("1", "2", "3", "atk"):
+                ability = int(input("Movimiento? NO VALIDO, porfavor volver a ingresar ;). (1, 2, 3, atk): "))
             if ability in (1,2,3):
                 ability += 4
             else:
                 ability = 8
         else:
-            ability=random.randint(5,6,7,8)
+            ability=random.randint(5, 8)
         if ability == 5:
-            changes = func.habilidad1(name[4])
+            changes = func.habilidad1(name[2], name[3])
         elif ability == 6:
-            changes = func.habilidad2(name[4])
+            changes = func.habilidad2(name[2], name[3])
         elif ability == 7:
-            changes = func.habilidad3(name[4])
-        elif ability == 6:
-            changes = [basico(func[0], func[1]), 0, 0]
+            changes = func.habilidad3(name[2], name[3])
+        elif ability == 8:
+            x = basico(name[0], name[1])
+            changes = [x, 0, 60]
         if changes[0]+changes[1]+changes[2] <= 0:
             turno = True
     return changes
 
 def batalla(ingame, enemy):
     #Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida
-    while int(ingame[2]) > 0 and int(enemy[2]) > 0):
+    print(ingame)
+    print(enemy)
+    ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
+    enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
+    while int(ingame[2]) > 0 and int(enemy[2]) > 0:
         print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
-        changes = seleccionarhabilidad(ingame[4], 1)
-        echanges = seleccionarhabilidad(enemy[4], 0)
+        changes = seleccionarhabilidad(ingame, 1)
+        echanges = seleccionarhabilidad(enemy, 0)
         #Cambios en personaje principal
         ingame[2] += (changes[1] - changes[0])
         ingame[3] = changes[2]
