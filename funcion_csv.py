@@ -14,7 +14,7 @@ def leer_csv(archivo):
         return variable
 
 def escribir_csv(personaje):
-    lista = [str(personaje.dmg),str(personaje.dmg2),str(personaje.hp),str(personaje.energia),str(personaje.name),str(personaje.desh1),str(personaje.desh2),str(personaje.desh3)]
+    lista = [str(personaje.dmg),str(personaje.dmg2),str(personaje.hp),str(personaje.energia),str(personaje.name),str(personaje.desh1),str(personaje.desh2),str(personaje.desh3),str(personaje.win),str(personaje.lose)]
     arch = open('load.txt', 'wt') 
     for i in lista:
         arch.write(i + ",")
@@ -58,5 +58,5 @@ def jefe_csv():
 #         f.write(item + "\n")
 #     f.close()
 
-#escribir_csv(Lonsi)
+escribir_csv(Arbutus)
 
