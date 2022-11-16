@@ -4,6 +4,7 @@ import seleccion_personaje
 import importar_personaje
 import bars
 import tools
+import menu_principal
 from Personajes.Arbutus import Arbutus
 from Personajes.Froggy import Froggy
 from Personajes.Gregg import Gregg
@@ -35,10 +36,12 @@ def seleccionarhabilidad(name, ability):
         turno = True
         if ability != 0:
             
-            ability = input("Ingresar movimiento: atk, 1, 2, 3: ")
-            while ability not in ("1", "2", "3", "atk"):
-                ability = input("Movimiento? NO VALIDO, porfavor volver a ingresar ;). (1, 2, 3, atk): ")
-            if ability in ("1","2","3"):
+            ability = print("|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4| ")
+            ability = input(">")
+            while ability not in ("2", "3", "4", "1"):
+                ability = print("Movimiento no valido, porfavor volver a seleccionar movimiento:\n|Ataque  =   1||Habilidad = 2|\n,|Habilidad = 3||Habilidad = 4|")
+                ability = input(">")
+            if ability in ("2","3","4"):
                 ability = int(ability)
                 ability += 4
             else:
@@ -77,21 +80,16 @@ def seleccionarhabilidad(name, ability):
 
 
 def batalla(ingame, enemy):
+    Battle = True
     #Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida
     print("Enemigo: ", enemy[4] )
     ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
     print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
-    while ingame[2] > 0 and enemy[2] > 0:
-        tools.clear
+    while Battle:
         funcion_csv.personaje_txt(enemy[4])
-        #Seleccion de habilidad del Own Character, y la pc
-        changes = seleccionarhabilidad(ingame, 1)
-        echanges = seleccionarhabilidad(enemy, 0)
-        #Display de daño
-        print("Daño realizado: ", changes[0]) 
-        print("Daño recibido: ", echanges[0])
-        print("ENEMIGO:")
+
+        #Inicio de la batalla
         enebar = bars.gen_barras(enemy[2], enemy[3])
         bars.mostrar_barras(enebar)
         print("vida: ", enemy[2], "|energia: ",  enemy[3])
@@ -99,19 +97,48 @@ def batalla(ingame, enemy):
         tubar = bars.gen_barras(ingame[2], ingame[3])
         bars.mostrar_barras(tubar)
         print("vida: ", ingame[2], "|energia: ", ingame[3])
-
-        #Cambios en personaje principal
-        ingame[2] += (changes[1] - echanges[0])
-        ingame[3] = changes[2]
         
+        while ingame[2] >= 0 and enemy[2] >= 0:
+            #Turno del jugador
+            #Seleccion de habilidad del Own Character, y la pc
+            changes = seleccionarhabilidad(ingame, 1)
+            echanges = seleccionarhabilidad(enemy, 0)
+            
+            #Display de daño
+            print()
+            print("Daño realizado: ", changes[0]) 
+            print("Daño recibido: ", echanges[0])
+            print()
+            tools.clear()
+            print("ENEMIGO:")
+            enebar = bars.gen_barras(enemy[2], enemy[3])
+            bars.mostrar_barras(enebar)
+            print("vida: ", enemy[2], "|energia: ",  enemy[3])
+            print()
+            print("JUGADOR:")
+            tubar = bars.gen_barras(ingame[2], ingame[3])
+            bars.mostrar_barras(tubar)
+            print("vida: ", ingame[2], "|energia: ", ingame[3])
 
-        #Cambios en personaje enemigo
-        enemy[2] += (echanges[1] - changes[0])
-        enemy[3] = echanges[2]
+            #Cambios en personaje principal
+            ingame[2] += (changes[1] - echanges[0])
+            ingame[3] = changes[2]
+            
 
-    print("Fin del combate")
-    if ingame[2] > 0:
+            #Cambios en personaje enemigo
+            enemy[2] += (echanges[1] - changes[0])
+            enemy[3] = echanges[2]
+
+
+        Battle = False
+    print()
+    if ingame[2] >= 0:
+        print(f"Fin del combate, has ganado {menu_principal.name}!")
         ingame[2] += 300
+    else:
+        print("Fin del combate, has perdido.")
+        
+        
 
 
 
