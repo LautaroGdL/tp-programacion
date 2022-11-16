@@ -17,7 +17,6 @@ def select_character(jugador, choice):
             # tools.time(1,tools.clear())
             tools.clear()
             tools.draw()
-            galeria_p()
             print("|Gr-egg:  1||Arbutus: 2||Huigh:   3||Stewie:  4||Willy:   5||Froggy:  6||Lonsi:   7|")
             choice = ""
             choice = input("> ")
@@ -68,14 +67,8 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Froggy/Froggy_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-            print("Nombre: ",Froggy.name,"\n" + Froggy.des)
-
-        elif choice == "7":
-            tools.clear() 
-            lista_texto=funcion_csv.leer_csv("Personajes/Lonsi/Lonsi_ascii.txt")
-            for i in range(0, len(lista_texto)):
-                    print(lista_texto[i].replace("\n", ""))
-            print("Nombre: ",Lonsi.name,"\n" + Lonsi.des)
+            print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg,"Daño 2: ","||",Froggy.dmg2,"\n" + Froggy.des)
+            funcion_csv.escribir_csv(Froggy)
 
         elif choice == "0":
             run = False
@@ -104,8 +97,3 @@ def select_character(jugador, choice):
                     seleccionar_personaje = False
                     menu = True
     tools.clear()
-
-galeria_texto=funcion_csv.leer_csv("ascii_texto.txt")
-def galeria_p():
-    for i in range(0, len(galeria_texto)):
-        print(galeria_texto[i].replace("\n", ""))
