@@ -14,7 +14,7 @@ def habilidad1 (hp,energia):
         heal=0
         print(f"Realizas {dmg_turno} de daño este turno")
     else:
-        print("No tienes energía suficiente, elegí otra movimiento")
+        print("No tienes energía suficiente, elegí otro movimiento")
         dmg_turno,hp,energia=0,0,0
     return (dmg_turno,heal,energia)
 
@@ -25,7 +25,7 @@ def habilidad2 (hp,energia):
         dmg_turno=0
         print(f"Te curas {heal} de vida\n")
     else:
-        print("No tienes energía suficiente, elegí otra movimiento\n")
+        print("No tienes energía suficiente, elegí otro movimiento\n")
         dmg_turno,hp,energia=0,0,0
     return (dmg_turno,heal,energia)
 
@@ -40,7 +40,7 @@ def habilidad3 (hp,energia):
         energia=energia-60
         print(f"Realizas {dmg_turno} de daño este turno")
     else:
-        print("No tienes energía suficiente, elegí otra movimiento")
+        print("No tienes energía suficiente, elegí otro movimiento")
         dmg_turno,hp,energia=0,0,0
     return (dmg_turno,heal,energia)
 win="Arbutus lo supo desde el principio. Lonsi no era un león. Era una flor. Lo dedujo gracias a sus bastos conocimientos en botánica (y a que se le cayó el disfraz luego de ser derrotado).\n Pero el vió algo en Lonsi que nadie hizo, a un alma gentil pero asustada, alguien con defectos pero con buenas intenciones. El vio a un gran amigo.\n Comenzaron a hablar y su conexión fue natural, sintieron que tenían las mismas raíces (no porque ambos fuesen plantas).\n El tiempo pasó.... Hoy en día son un dúo muy famoso que da conferencias sobre el medio ambiente. Sus charlas son profundas y demuestran mucho experiencia sobre el campo, el problema es que hablan tanto que nunca terminan.\n"

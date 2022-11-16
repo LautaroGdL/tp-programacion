@@ -4,9 +4,9 @@ hp=350
 energia=150
 name="Froggy"
 des="Su pasión por el origami es tan grande que su cuerpo se volvió uno. \n Gracias a su poco peso ganó mucha agilidad, pero ahora odia el viento\n"
-desh1="Vuela embistiendo al enemigo causando 140 de DMG.Coste 100 de energía\n"
-desh2="Corta al enemigo realizando 40-70 DMG y se cura un '40%' del daño realizado. 50 coste de energía\n"
-desh3="Arroja un cisne de origami causando 90-110 de DMG. Coste 40 de energía\n"
+desh1="Vuela (evitando el viento) con el fin de envestir al enemigo causando 140 de DMG.Coste 100 de energía\n"
+desh2="Con su pierna filosa, corta al enemigo 40-70 (DMG) y se cura un '40%' del daño realizado. 50 Coste de energía\n"
+desh3="Arroja un cisne de origami que usa a veces como sombrero causando 90-110 de DMG. Coste 40 de energía\n"
 
 def habilidad1(hp,energia):
     if energia>=100:
@@ -15,7 +15,7 @@ def habilidad1(hp,energia):
         energia=energia-100
         print(f"Realizaste {dmg_turno} de daño este turno.\n")
     else:
-        print("No tienes energía suficiente, elegí otra movimiento\n")
+        print("No tienes energía suficiente, elegí otro movimiento\n")
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
@@ -27,7 +27,7 @@ def habilidad2(hp,energia):
         energia=energia-50
         print(f"Realizaste {dmg_turno} de daño y te curas {heal} este turno.\n")
     else:
-        print("No tienes energía suficiente, elegí otra movimiento\n")
+        print("No tienes energía suficiente, elegí otro movimiento\n")
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
@@ -39,7 +39,7 @@ def habilidad3(hp,energia):
         heal=0
         print(f"Realizaste {dmg_turno} de daño este turno.\n")
     else:
-        print("No tienes energía suficiente, elegí otra movimiento\n")
+        print("No tienes energía suficiente, elegí otro movimiento\n")
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
