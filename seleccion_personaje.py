@@ -9,7 +9,7 @@ from Personajes.Froggy import Froggy
  
 def select_character(jugador, choice):
     menu = True
-    
+    choice = str(choice)
     while menu:
         if jugador == 1:
             # tools.time(1,tools.clear())
@@ -71,17 +71,19 @@ def select_character(jugador, choice):
         
         else:
             continue
-    
-        print()
-        seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n\nAceptar: 1 \nVolver: Otra tecla \n> ").lower()
+        if jugador == 0:
+            menu = False
+        else:
+            print()
+            seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n\nAceptar: 1 \nVolver: Otra tecla \n> ").lower()
 
-        while seleccionar_personaje:
-            tools.clear()
-            if seleccionar_personaje == "Aceptar" or seleccionar_personaje == "1":
-                menu = False
-                seleccionar_personaje= False
-                # stats_personaje=funcion_csv.escribir_csv()
-            else:
-                seleccionar_personaje = False
-                menu = True
+            while seleccionar_personaje:
+                tools.clear()
+                if seleccionar_personaje == "Aceptar" or seleccionar_personaje == "1":
+                    menu = False
+                    seleccionar_personaje= False
+                    # stats_personaje=funcion_csv.escribir_csv()
+                else:
+                    seleccionar_personaje = False
+                    menu = True
     tools.clear()
