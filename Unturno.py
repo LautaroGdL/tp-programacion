@@ -84,6 +84,18 @@ def batalla(ingame, enemy):
     print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
     while ingame[2] > 0 and enemy[2] > 0:
         tools.clear
+        funcion_csv.personaje_txt(enemy[4])
+                #Display de daño
+        print("Daño realizado: ", changes[0]) 
+        print("Daño recibido: ", echanges[0])
+        print("ENEMIGO:")
+        enebar = bars.gen_barras(enemy[2], enemy[3])
+        bars.mostrar_barras(enebar)
+        print("vida: ", enemy[2], "|energia: ",  enemy[3])
+        print("TU:")
+        tubar = bars.gen_barras(ingame[2], ingame[3])
+        bars.mostrar_barras(tubar)
+        print("vida: ", ingame[2], "|energia: ", ingame[3])
 
         #Seleccion de habilidad del Own Character, y la pc
         changes = seleccionarhabilidad(ingame, 1)
@@ -97,17 +109,6 @@ def batalla(ingame, enemy):
         #Cambios en personaje enemigo
         enemy[2] += (echanges[1] - changes[0])
         enemy[3] = echanges[2]
-        #Display de daño
-        print("Daño realizado: ", changes[0]) 
-        print("Daño recibido: ", echanges[0])
-        print("ENEMIGO:")
-        enebar = bars.gen_barras(enemy[2], enemy[3])
-        bars.mostrar_barras(enebar)
-        print("vida: ", enemy[2], "|energia: ",  enemy[3])
-        print("TU:")
-        tubar = bars.gen_barras(ingame[2], ingame[3])
-        bars.mostrar_barras(tubar)
-        print("vida: ", ingame[2], "|energia: ", ingame[3])
 
     print("Fin del combate")
     if ingame[2] > 0:
@@ -118,12 +119,11 @@ def batalla(ingame, enemy):
 def generarenemigos(n):
     #Genera una lista de 5 enemigos, el ultimo siempre sera lonsi
     list=[]
-    for i in range(2):
+    for i in range(n):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
         if i == n+3:
             en=funcion_csv.leer_ascii("lonsi.txt")
-        list.append(en)
     return list
 
 def pelea():
@@ -132,4 +132,6 @@ def pelea():
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigos(3)
     for i in range(len(lista_Enemigos)-1):
-        batalla(personaje, lista_Enemigos[i])  
+        batalla(personaje, lista_Enemigos[i])
+    lionsi = funcion_csv.leer_ascii("lonsi.txt")    
+    batalla(personaje, lionsi)
