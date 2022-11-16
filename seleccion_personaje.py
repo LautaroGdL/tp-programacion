@@ -114,5 +114,3 @@ seleccion_texto=funcion_csv.leer_ascii("seleccion_ascii.txt")
 def seleccion_p():
     for i in range(0, len(seleccion_texto)):
         print(seleccion_texto[i].replace("\n", ""))
-
-select_character(1,"lonsi")
