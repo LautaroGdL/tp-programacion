@@ -47,4 +47,6 @@ def habilidad3 (energia):
         print("No tienes energía suficiente, elegí otra movimiento")
         dmg_turno,heal,energia=0,0,0
     return (dmg_turno,heal,energia)
-        
+
+win="Durante el torneo Gr-egg tuvo muchas revelaciones.\n Respondió muchas dudas. Se aclaró(como la clara del huevo) las cosas consigo mismo.\n Tras su victoria quedó atónito. Encontró la respuesta.\n Supo quien vino primero, si el huevo o la gallina.\n Con un tono un tanto elegante pero extraño dijo:\n 'Cuchara. Luego de tantos años encontré la respuesta. Quien vino primero. Fue...'\n"
+lose="El ultimo ataque de Lonsi fue devastador para Gr-egg. Le agrietó la cáscara.\n Estas cicatrices harían creer al huevo que ya era su momento.\n Tenía miedo. Había oído historias de lo que les pasaba a los huevos que agrietaban.\n Se convertían en algo espantoso. Un polluelo.\n Pero no. Solo se agritó por el golpe. Esto Gr-egg nunca lo supo, por lo que vivió el resto de sus días con miedo\n"

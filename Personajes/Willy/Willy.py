@@ -42,3 +42,6 @@ def habilidad3(energia):
         print("No tienes energía suficiente, elegí otra movimiento")
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
+
+win="Finalmente derrotó a Lonsi. Ahora se decidió a cumplir su sueño. Parecía imposible, pero finalmente lo va a conseguir.\n Como nuevo rey del Reinonsi establecerá su primer decreto. El cual obligará a todos los habitantes a llevar puesto un salvavidas todo el tiempo.\n De esta forma Willy podrá retirar de su trabajo de socorrista y pasará a la historia como el Mesías del salvavidas.\n Una tortuga tan heroica que salvaría a todos los que se estén por ahogar sin siquiera estar presente. \n (Además de darles un grandioso look)\n"
+lose="Su ultima batalla fue decisiva. Willy dió todo lo que tenía... pero falló.\n Durante esta ocurrió algo impensable: su salvavidas se rompió. Al igual que el espíritu de Willy.\n Pues sin el no era nada.\n"

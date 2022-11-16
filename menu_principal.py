@@ -36,7 +36,8 @@ def iniciar_juego():
             print("5: Salir del juego")
 
             if rules:
-                print("Estas son las reglas del juego: \n-Elegir a un personaje con el cual jugsras el modo Arcade o Versus.-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje. \n-Modo Versus: Pelear contra otro jugador o la máquina")
+                tools.clear()
+                print("Reglas del juego: \n-Elegir a un personaje con el cual jugaras el modo Arcade o Versus.\n-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje. \n-Modo Versus: Pelear contra otro jugador o la máquina \n\nDiviertete y gana!!!")
                 rules = False
                 choice = ""
                 input("> ")
