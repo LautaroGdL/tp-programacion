@@ -1,11 +1,11 @@
 def gen_barras(hp,st):
     health = []
     energy = []
-    health.append("|"*hp)
-    energy.append("|"*st)
+    health.append("|"*int(hp))
+    energy.append("|"*(st))
     bars = [health, energy]
-    health.append("|"*hp)
-    energy.append("|"*st)
+    health.append("|"*int(hp))
+    energy.append("|"*int(st))
     
     return bars
 

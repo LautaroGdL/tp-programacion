@@ -85,7 +85,10 @@ def batalla(ingame, enemy):
     while ingame[2] > 0 and enemy[2] > 0:
         tools.clear
         funcion_csv.personaje_txt(enemy[4])
-                #Display de daño
+        #Seleccion de habilidad del Own Character, y la pc
+        changes = seleccionarhabilidad(ingame, 1)
+        echanges = seleccionarhabilidad(enemy, 0)
+        #Display de daño
         print("Daño realizado: ", changes[0]) 
         print("Daño recibido: ", echanges[0])
         print("ENEMIGO:")
@@ -96,10 +99,6 @@ def batalla(ingame, enemy):
         tubar = bars.gen_barras(ingame[2], ingame[3])
         bars.mostrar_barras(tubar)
         print("vida: ", ingame[2], "|energia: ", ingame[3])
-
-        #Seleccion de habilidad del Own Character, y la pc
-        changes = seleccionarhabilidad(ingame, 1)
-        echanges = seleccionarhabilidad(enemy, 0)
 
         #Cambios en personaje principal
         ingame[2] += (changes[1] - echanges[0])
@@ -122,14 +121,15 @@ def generarenemigos(n):
     for i in range(n):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
-        if i == n+3:
-            en=funcion_csv.leer_ascii("lonsi.txt")
+        if i == n:
+            en = funcion_csv.importarpersonaje(0, "lonsi")
+        list.append(en)
     return list
 
 def pelea():
     #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
-    lista_Enemigos = generarenemigos(3)
+    lista_Enemigos = generarenemigos(2)
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])
