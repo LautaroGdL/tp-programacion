@@ -133,5 +133,3 @@ def pelea():
     lista_Enemigos = generarenemigos(3)
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])
-    lionsi = funcion_csv.leer_ascii("lonsi.txt")    
-    batalla(personaje, lionsi)
