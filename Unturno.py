@@ -19,7 +19,7 @@ def basico(mini, maxi):
 def importarpersonaje(jugador, nro):
     #Genera las estadisticas del personaje que se elige
     seleccion_personaje.select_character(jugador, nro)
-    stats=funcion_csv.leer_csv("Ascii/load.txt")
+    stats=funcion_csv.leer_ascii("load.txt")
     stats = stats[0].split(',')
     return stats
 
@@ -61,11 +61,12 @@ def seleccionarhabilidad(name, ability):
             changes.append(changes3)
         elif ability == 8:
             x = basico(name[0], name[1])
-            changes = [x, 0, 60]
+            changes = [x, 0, name[3]+60]
         if changes[0]+changes[1]+changes[2] <= 0:
             if ability == 1:
                 print("No tiene suficiente energia, selecciona otra habilidad. ")
-            turno = True
+        else:
+            turno = False
     return changes
 
 
@@ -83,15 +84,15 @@ def batalla(ingame, enemy):
         echanges = seleccionarhabilidad(enemy, 0)
 
         #Cambios en personaje principal
-        ingame[2] += (changes[1] - changes[0])
+        ingame[2] += (changes[1] - echanges[0])
         ingame[3] = changes[2]
-        print("Daño realizado: ", changes[0])
         
 
         #Cambios en personaje enemigo
-        enemy[2] += (echanges[1] - echanges[0])
+        enemy[2] += (echanges[1] - changes[0])
         enemy[3] = echanges[2]
-        #Display de daño 
+        #Display de daño
+        print("Daño realizado: ", changes[0]) 
         print("Daño recibido: ", echanges[0])
         print("ENEMIGO:")
         print("vida: ", enemy[2], "|energia: ",  enemy[3])
@@ -106,7 +107,7 @@ def generarenemigos(n):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
         if i == n-1:
-            en=funcion_csv.leer_csv("Ascii/lonsi.txt")
+            en=funcion_csv.leer_ascii("lonsi.txt")
         list.append(en)
     return list
 
@@ -116,7 +117,8 @@ def pelea():
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigos(4)
     for i in range(4):
-        batalla(personaje, lista_Enemigos[i])  
+        aux_personaje = personaje
+        batalla(aux_personaje, lista_Enemigos[i])  
 
 
 pelea()

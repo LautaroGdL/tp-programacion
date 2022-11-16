@@ -101,7 +101,7 @@ def select_character(jugador, choice):
                     menu = True
     tools.clear()
 
-seleccion_texto=funcion_csv.leer_csv("seleccion_ascii.txt")
+seleccion_texto=funcion_csv.leer_ascii("seleccion_ascii.txt")
 def seleccion_p():
     for i in range(0, len(seleccion_texto)):
         print(seleccion_texto[i].replace("\n", ""))
