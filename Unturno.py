@@ -2,6 +2,7 @@ import random
 import funcion_csv
 import seleccion_personaje
 import importar_personaje
+import bars
 from Personajes.Arbutus import Arbutus
 from Personajes.Froggy import Froggy
 from Personajes.Gregg import Gregg
@@ -99,8 +100,12 @@ def batalla(ingame, enemy):
         print("Daño realizado: ", changes[0]) 
         print("Daño recibido: ", echanges[0])
         print("ENEMIGO:")
+        enebar = bars.gen_barras(enemy[2], enemy[3])
+        bars.mostrar_barras(enebar)
         print("vida: ", enemy[2], "|energia: ",  enemy[3])
         print("TU:")
+        tubar = bars.gen_barras(ingame[2], ingame[3])
+        bars.mostrar_barras(tubar)
         print("vida: ", ingame[2], "|energia: ", ingame[3])
     print("Fin del combate")
     if ingame[2] > 0:
@@ -124,8 +129,8 @@ def pelea():
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigos(0)
+    print(lista_Enemigos)
     for i in range(len(lista_Enemigos)-1):
         aux_personaje = personaje
         batalla(aux_personaje, lista_Enemigos[i])  
-
-
+    x=("INput")
