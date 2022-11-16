@@ -100,7 +100,7 @@ def galeria():
 
 
 
-lista_galeria=funcion_csv.leer_csv("galeria.txt")
+lista_galeria=funcion_csv.leer_csv("Ascii/galeria_ascii.txt")
 def galeria_p():
     for i in range(0, len(lista_galeria)):
         print(lista_galeria[i].replace("\n", ""))

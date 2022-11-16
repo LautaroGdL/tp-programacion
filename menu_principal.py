@@ -74,7 +74,7 @@ def iniciar_juego():
                 menu = True
                 #save()       
 
-lista_texto=funcion_csv.leer_csv("ascii_texto.txt")
+lista_texto=funcion_csv.leer_csv("Ascii/ascii_texto.txt")
 def menu_p():
     for i in range(0, len(lista_texto)):
         print(lista_texto[i].replace("\n", ""))
