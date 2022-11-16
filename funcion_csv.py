@@ -24,15 +24,18 @@ def escribir_csv(personaje):
 def cargar_csv():
     f = open("load.txt", "r")
     load_list = f.readlines()
-    dmg= load_list[0]
-    dmg2= load_list[1]
-    hp = load_list[2]
-    energia = load_list[3]
-    name = load_list[4]
-    des = load_list[5]
-    desh1 = load_list[6]
-    desh2 = load_list[7]
-    desh3 = load_list[8]
+    load_list = [
+        # [str(dmg)],
+        # [str(dmg2)],
+        # [str(hp)],
+        # [str(energia)],
+        # [str(personaje.name)],
+        # [str(personaje.desh1)],
+        # [str(personaje.desh2)],
+        # [str(personaje.desh3)]
+        ]
+    return load_list
+
 
 def jefe_csv():
     lista = [str(Lonsi.dmg),str(Lonsi.dmg2),str(Lonsi.hp),str(Lonsi.energia),str(Lonsi.name),str(Lonsi.desh1),str(Lonsi.desh2),str(Lonsi.desh3)]
