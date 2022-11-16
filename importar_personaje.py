@@ -1,6 +1,6 @@
 def importar_pj(name):
     "Devuelve el archivo de un pj basandose en el nombre dado"
-    while name not in (Arbutus, Froggy, Gregg, Huigh, Lonsi, Stewie, Willy):
+    while name not in ("Arbutus", "Froggy", "Gregg", "Huigh", "Lonsi", "Stewie", "Willy"):
         name=input("Nombre no valido, elegir de vuelta, (Arbutus, Froggy, Gregg, Huigh, Lonsi, Stewie, Willy): ")
     
     if name == "Gregg":

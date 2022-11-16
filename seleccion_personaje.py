@@ -6,6 +6,8 @@ from Personajes.Arbutus import Arbutus
 from Personajes.Stewie import Stewie
 from Personajes.Willy import Willy
 from Personajes.Froggy import Froggy
+from Personajes.Lonsi import Lonsi
+
  
 def select_character(jugador, choice):
     menu = True
@@ -15,8 +17,8 @@ def select_character(jugador, choice):
             # tools.time(1,tools.clear())
             tools.clear()
             tools.draw()
-            print("Seleccione a su personaje: ")
-            print("|Gr-egg:  1| \n|Arbutus: 2| \n|Huigh:   3| \n|Stewie:  4| \n|Willy:   5| \n|Froggy:  6|")
+            galeria_p()
+            print("|Gr-egg:  1||Arbutus: 2||Huigh:   3||Stewie:  4||Willy:   5||Froggy:  6||Lonsi:   7|")
             choice = ""
             choice = input("> ")
 
@@ -66,9 +68,24 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Froggy/Froggy_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-            print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg,"Daño 2: ","||",Froggy.dmg2,"\n" + Froggy.des)
-            funcion_csv.escribir_csv(Froggy)
+            print("Nombre: ",Froggy.name,"\n" + Froggy.des)
+
+        elif choice == "7":
+            tools.clear() 
+            lista_texto=funcion_csv.leer_csv("Personajes/Lonsi/Lonsi_ascii.txt")
+            for i in range(0, len(lista_texto)):
+                    print(lista_texto[i].replace("\n", ""))
+            print("Nombre: ",Lonsi.name,"\n" + Lonsi.des)
+
+        elif choice == "0":
+            run = False
+            menu = False
+            seleccionar_personaje= False
+            # stats_personaje=funcion_csv.escribir_csv()
+            break
         
+
+
         else:
             continue
         if jugador == 0:
@@ -87,3 +104,8 @@ def select_character(jugador, choice):
                     seleccionar_personaje = False
                     menu = True
     tools.clear()
+
+galeria_texto=funcion_csv.leer_csv("ascii_texto.txt")
+def galeria_p():
+    for i in range(0, len(galeria_texto)):
+        print(galeria_texto[i].replace("\n", ""))
