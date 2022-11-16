@@ -9,6 +9,7 @@ desh2="Lanza un ataque psiquico. El enemigo queda impactado de tal suciedad y po
 desh3="Invoca proyectiles extremadamente punzantes causando 60 de daño. Coste: 20 de energía (Realmente son sus amigos arrojando pedazos de vidrio que encontraron en el camino)\n"
 
 def habilidad1(hp,energia):
+    dmg_turno,heal=0,0
     if energia>=100:
         heal=100
         energia=energia-100
@@ -18,6 +19,7 @@ def habilidad1(hp,energia):
     return(hp,energia)
 
 def habilidad2(hp,energia):
+    dmg_turno,heal=0,0
     if energia>=70:
         dmg_turno=90
         energia=energia-70
@@ -27,6 +29,7 @@ def habilidad2(hp,energia):
     return(energia,dmg_turno)
 
 def habilidad3(hp,energia):
+    dmg_turno,heal=0,0
     if energia>=20:
         dmg_turno=60
         energia=energia-20

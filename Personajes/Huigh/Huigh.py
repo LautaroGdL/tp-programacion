@@ -9,6 +9,7 @@ desh2="Embiste y apuñala al objetivo causando DMG 'base-10%', pero se cura un '
 desh3="Se come una banana regenerando 80HP, esta crazy el monki. Coste 80 de energía\n"
 
 def habilidad1(hp,energia):
+    dmg_turno,heal=0,0
     import random
     if energia>=100:
         for i in range (3):
@@ -26,6 +27,7 @@ def habilidad1(hp,energia):
     return (dmg_turno,heal,energia)
 
 def habilidad2(hp,energia):
+    dmg_turno,heal=0,0
     import random
     if energia>=60:
         prob=random.randint(45, 75)
@@ -38,6 +40,7 @@ def habilidad2(hp,energia):
     return(dmg_turno,heal,energia)
 
 def habilidad3(hp,energia):
+    dmg_turno,heal=0,0
     if energia==80:
         heal=80
         dmg_turno=0

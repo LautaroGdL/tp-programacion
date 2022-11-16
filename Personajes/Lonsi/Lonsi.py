@@ -9,6 +9,7 @@ desh2="Toma la chocolatada curandose 80HP y te da sed. (como no es una stat en e
 desh3="No para de hablar. Hace que que quieras golpearte la cabeza contra el piso, perdiendo en el proceso 50-60 neuronas (DMG). Coste 40\n"
 
 def habilidad1(hp,energia):
+    dmg_turno,heal=0,0
     import random
     if energia>=40:
         dmg_turno=random.randint(30,70)
@@ -21,6 +22,7 @@ def habilidad1(hp,energia):
     return (dmg_turno,heal,energia)
 
 def habilidad2(hp,energia):
+    dmg_turno,heal=0,0
     import random
     if energia>=60:
         dmg_turno=0
@@ -33,6 +35,7 @@ def habilidad2(hp,energia):
     return(dmg_turno,heal,energia)
 
 def habilidad3(hp,energia):
+    dmg_turno,heal=0,0
     import random
     if energia==40:
         heal=0
