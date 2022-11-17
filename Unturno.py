@@ -146,6 +146,7 @@ def batalla(ingame, enemy):
         print(f"Fin del combate, has ganado {name}!")
         ingame[2] += 300
     else:
+        tools.clear()
         print("Fin del combate, has perdido.")
         
         
@@ -158,11 +159,11 @@ def generarenemigosarcade(n):
     for i in range(n):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
+        list.append(en)
         if i == n-1:
             lonsi = importarlonsi(0, 666)
             list.append(lonsi)
-        list.append(en)
-    list.pop()
+    #list.pop()
     return list
 
 def generarenemigosversus(n):
@@ -180,8 +181,8 @@ def arcade():
     #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
-    lista_Enemigos = generarenemigosarcade(4)
-    for i in range(len(lista_Enemigos)-1):
+    lista_Enemigos = generarenemigosarcade(1)
+    for i in range(len(lista_Enemigos)):
         batalla(personaje, lista_Enemigos[i])
 
 def versus():
@@ -192,5 +193,8 @@ def versus():
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])
 
-x = generarenemigosarcade(4)
+x = generarenemigosarcade(2)
 print(x)
+
+# x = batalla(Arbutus,Lonsi)
+# print(x)
