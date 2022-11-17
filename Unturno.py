@@ -26,6 +26,13 @@ def importarpersonaje(jugador, nro):
     stats = stats[0].split(',')
     return stats
 
+def importarlonsi(jugador, nro):
+    #Genera las estadisticas del personaje que se elige
+    seleccion_personaje.select_character(jugador, nro)
+    stats=funcion_csv.leer_ascii("lonsi.txt")
+    stats = stats[0].split(',')
+    return stats
+
 def seleccionarhabilidad(name, ability):
     #Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st, energy
     func=importar_personaje.importar_pj(name[4])
@@ -104,12 +111,13 @@ def batalla(ingame, enemy):
             changes = seleccionarhabilidad(ingame, 1)
             echanges = seleccionarhabilidad(enemy, 0)
             
+            tools.clear()
+            funcion_csv.personaje_txt(enemy[4])
             #Display de daño
             print()
             print("Daño realizado: ", changes[0]) 
             print("Daño recibido: ", echanges[0])
             print()
-            tools.clear()
             print("ENEMIGO:")
             enebar = bars.gen_barras(enemy[2], enemy[3])
             bars.mostrar_barras(enebar)
@@ -144,14 +152,27 @@ def batalla(ingame, enemy):
 
 
 
-def generarenemigos(n):
+def generarenemigosarcade(n):
+    #Genera una lista de 5 enemigos, el ultimo siempre sera lonsi
+    list=[]
+    for i in range(n):
+        x= random.randint(1, 6)
+        en = importarpersonaje(0, x)
+        if i == n-1:
+            lonsi = importarlonsi(0, 666)
+            list.append(lonsi)
+        list.append(en)
+    list.pop()
+    return list
+
+def generarenemigosversus(n):
     #Genera una lista de 5 enemigos, el ultimo siempre sera lonsi
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
         en = importarpersonaje(0, x)
         if i == n:
-            en = funcion_csv.importarpersonaje(0, "lonsi")
+            lonsi = importarlonsi(0, 666)
         list.append(en)
     return list
 
@@ -159,7 +180,7 @@ def arcade():
     #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
-    lista_Enemigos = generarenemigos(2)
+    lista_Enemigos = generarenemigosarcade(4)
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])
 
@@ -167,6 +188,9 @@ def versus():
     #Programa principal, mezcla de todos las funciones anteriores 
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
-    lista_Enemigos = generarenemigos(2)
+    lista_Enemigos = generarenemigosversus(2)
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])
+
+x = generarenemigosarcade(4)
+print(x)
