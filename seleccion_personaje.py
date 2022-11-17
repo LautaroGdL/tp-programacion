@@ -115,3 +115,6 @@ def seleccion_p():
     for i in range(0, len(seleccion_texto)):
         print(seleccion_texto[i].replace("\n", ""))
 
+# funcion_csv.escribir_csv(Gregg)
+# x = funcion_csv.leer_ascii("load.txt")
+# print(x[0])

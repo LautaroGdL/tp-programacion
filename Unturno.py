@@ -4,7 +4,6 @@ import seleccion_personaje
 import importar_personaje
 import bars
 import tools
-import menu_principal
 from Personajes.Arbutus import Arbutus
 from Personajes.Froggy import Froggy
 from Personajes.Gregg import Gregg
@@ -14,27 +13,27 @@ from Personajes.Willy import Willy
 
 
 def basico(mini, maxi):
-    #Genera el valor de daño de un basico basandose en el daño maximo y miniomo posible
+    '''Genera el valor de daño de un basico basandose en el daño maximo y miniomo posible'''
     dmg = random.randint(int(mini),int(maxi))
     return dmg 
 
 
 def importarpersonaje(jugador, nro):
-    #Genera las estadisticas del personaje que se elige
+    '''Genera las estadisticas del personaje que se elige'''
     seleccion_personaje.select_character(jugador, nro)
     stats=funcion_csv.leer_ascii("load.txt")
     stats = stats[0].split(',')
     return stats
 
 def importarlonsi(jugador, nro):
-    #Genera las estadisticas del personaje que se elige
+    '''Genera las estadisticas del personaje que se elige'''
     seleccion_personaje.select_character(jugador, nro)
     stats=funcion_csv.leer_ascii("lonsi.txt")
     stats = stats[0].split(',')
     return stats
 
 def seleccionarhabilidad(name, ability):
-    #Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st, energy
+    '''Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st, energy'''
     func=importar_personaje.importar_pj(name[4])
     turno = True
     changes = []
@@ -56,7 +55,7 @@ def seleccionarhabilidad(name, ability):
         else:
             ability=random.randint(5, 8)
         changes1, changes2, changes1 = 0, 0, 0
-        #Mantiene en bucle hasta que se seleccione una habilidad que puedas tirar 
+        '''Mantiene en bucle hasta que se seleccione una habilidad que puedas tirar '''
         if ability == 5:
             changes1, changes2, changes3 = func.habilidad1(name[2], name[3])
             changes.append(changes1)
@@ -88,7 +87,7 @@ def seleccionarhabilidad(name, ability):
 
 def batalla(ingame, enemy):
     Battle = True
-    #Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida
+    '''Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida'''
     print("Enemigo: ", enemy[4] )
     ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
@@ -96,7 +95,7 @@ def batalla(ingame, enemy):
     while Battle:
         funcion_csv.personaje_txt(enemy[4])
 
-        #Inicio de la batalla
+        '''Inicio de la batalla'''
         enebar = bars.gen_barras(enemy[2], enemy[3])
         bars.mostrar_barras(enebar)
         print("vida: ", enemy[2], "|energia: ",  enemy[3])
@@ -154,7 +153,7 @@ def batalla(ingame, enemy):
 
 
 def generarenemigosarcade(n):
-    #Genera una lista de 5 enemigos, el ultimo siempre sera lonsi
+    '''Genera una lista de 5 enemigos, el ultimo siempre sera lonsi'''
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
@@ -167,7 +166,7 @@ def generarenemigosarcade(n):
     return list
 
 def generarenemigosversus(n):
-    #Genera una lista de 5 enemigos, el ultimo siempre sera lonsi
+    '''Genera una lista de 5 enemigos, el ultimo siempre sera lonsi'''
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
@@ -178,7 +177,7 @@ def generarenemigosversus(n):
     return list
 
 def arcade():
-    #Programa principal, mezcla de todos las funciones anteriores 
+    '''Programa principal, mezcla de todos las funciones anteriores'''
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigosarcade(1)
@@ -186,15 +185,16 @@ def arcade():
         batalla(personaje, lista_Enemigos[i])
 
 def versus():
-    #Programa principal, mezcla de todos las funciones anteriores 
+    '''Programa principal, mezcla de todos las funciones anteriores '''
     print("FIGHT!")
     personaje = importarpersonaje(1, 0)
     lista_Enemigos = generarenemigosversus(2)
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])
 
-x = generarenemigosarcade(2)
-print(x)
+# x = generarenemigosarcade(2)
+# print(x)
 
 # x = batalla(Arbutus,Lonsi)
 # print(x)
+

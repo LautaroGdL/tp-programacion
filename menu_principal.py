@@ -37,7 +37,7 @@ def iniciar_juego():
                 
             #Opciones
             if choice == "1":
-                #Inicia el Modo Arcade 
+                '''Inicia el Modo Arcade '''
                 tools.clear()
                 tools.draw()
                 user = input("Escribe tu nombre: ")
@@ -45,7 +45,7 @@ def iniciar_juego():
                 menu = False
                 play = True
             elif choice == "2":
-                #Inicia el Modo Versus
+                '''Inicia el Modo Versus'''
                 tools.clear()
                 tools.draw()
                 user = input("Escribe tu nombre: ")
