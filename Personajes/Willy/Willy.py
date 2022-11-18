@@ -1,6 +1,6 @@
-dmg=45
-dmg2=60
-hp=450
+dmg=42
+dmg2=55
+hp=420
 energia=150
 name="Willy"
 des="Un famoso socorrista conocido por su gran velocidad en el agua, su frase célebre es 'todo gracias al salvavidas'. \n Si lo ves no toques su salvavidas, pierde sus estribos cuando alguien lo hace."
@@ -11,7 +11,7 @@ desh3="Se coloca unos flotadores que tiene guardados, aumentando su propia moral
 def habilidad1(hp,energia):
     dmg_turno,heal=0,0
     if energia>=90:
-        dmg_turno=120
+        dmg_turno=90
         energia=energia-90
     else:
 
@@ -21,9 +21,9 @@ def habilidad1(hp,energia):
 def habilidad2(hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia>=30:
+    if energia>=40:
         for i in range (3):
-            dtimes=random.randint(15, 20)
+            dtimes=random.randint(15, 25)
             dmg_turno=dmg_turno+dtimes
         energia=energia-30
     else:
@@ -33,7 +33,7 @@ def habilidad2(hp,energia):
 def habilidad3(hp,energia):
     dmg_turno,heal=0,0
     if energia>=60:
-        heal=70
+        heal=60
         dmg_turno=0
     else:
         dmg_turno,heal,energia=0,0,0

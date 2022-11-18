@@ -1,6 +1,6 @@
-dmg=20
-dmg2=50
-hp=1200
+dmg=15
+dmg2=35
+hp=800
 energia=150
 name="Lonsi"
 des="Lonsi se cansó de que lo llamaran Planteonsi (porque es una planta). Así que se disfrazó de león engañandolos a todos, por eso fue coronado como rey. \n Seducido por el poder armó un torneo con los seres mas poderosos del Reinonsi.\n"
@@ -12,7 +12,7 @@ def habilidad1(hp,energia):
     dmg_turno,heal=0,0
     import random
     if energia>=40:
-        dmg_turno=random.randint(30,70)
+        dmg_turno=random.randint(25,45)
         energia=energia-40
         heal=0
     else:
@@ -24,7 +24,7 @@ def habilidad2(hp,energia):
     import random
     if energia>=60:
         dmg_turno=0
-        heal=80
+        heal=60
         energia=energia-60
     else:
         dmg_turno,heal,energia=0,0,0
@@ -33,10 +33,10 @@ def habilidad2(hp,energia):
 def habilidad3(hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia==40:
+    if energia==80:
         heal=0
-        dmg_turno=random.randint(50,60)
-        print(f"Te curas {heal}")
+        dmg_turno=random.randint(30,70)
+        energia=energia-40
     else:
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)

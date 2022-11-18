@@ -1,19 +1,18 @@
-dmg=50
-dmg2=60
+dmg=40
+dmg2=50
 hp=450
 energia=150
 name="Gregg"
 des="Ganó su apodo por su extravagante forma de hablar. \n Su arma de elección es cuchara, su mejor amigo pez espada. \n Forman un equipo muy balanceado y nutritivo (?)\n"
 desh1=" Gr-egg pega un cabezaso el cual infringe su daño base + 20. Coste=80 energia"
-desh2=" Cuchara con una mirada intensa le roba vida al enemigo y cura a Gr-egg.  Coste=60 energía\n"
-desh3=" El pez espada se mueve sin control dañando al enemigo Golpeando 1-3 veces, infligiendo de 35-55 de daño x cada golpe. Coste=40 energía\n"
+desh2=" Cuchara con una mirada intensa le roba 60 de vida al enemigo y cura a Gr-egg.  Coste=60 energía\n"
+desh3=" El pez espada se mueve sin control dañando al enemigo Golpeando 1-3 veces, infligiendo de 30-35 de daño x cada golpe. Coste=40 energía\n"
 
 def habilidad1 (hp,energia):
     dmg_turno,heal=0,0
     import random
     if energia>=80:
-        dmg1=random.randint(50, 60)
-        dmg_turno=dmg1
+        dmg_turno=random.randint(50, 60)
         energia=energia-80
     else:
         dmg_turno,heal,energia=0,0,0
@@ -22,7 +21,7 @@ def habilidad1 (hp,energia):
 def habilidad2 (hp,energia):
     dmg_turno,heal=0,0
     if energia>=60:
-        heal=50
+        heal=60
         energia=energia-60
         dmg_turno=heal
     else:
@@ -32,12 +31,12 @@ def habilidad2 (hp,energia):
 def habilidad3 (hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia>=40:
+    if energia>=50:
         times=random.randint(1,3)
         for i in range (times):
-            dtimes=random.randint(33,44)
+            dtimes=random.randint(30,35)
             dmg_turno=dmg_turno+dtimes
-        energia=energia-40
+        energia=energia-50
         heal=0
     else:
         dmg_turno,heal,energia=0,0,0

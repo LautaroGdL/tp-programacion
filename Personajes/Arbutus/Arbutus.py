@@ -1,17 +1,17 @@
-dmg=40
-dmg2=45
-hp=600
+dmg=20
+dmg2=40
+hp=500
 energia=150
 name="Arbutus"
 des="Sus hojas huyeron del miedo que inspira su apariencia, pero en el interior posee un corazón de roble. \n Adora enseñar botánica pero suele ir por las ramas mientras habla.\n"
 desh1="Accidentalmente se tropieza aplastando al enemigo realizando al enemigo 100 de daño. (Se disculpa y levanta nuevamente) Coste: 90 energía\n"
-desh2="Se come un Alfajor el cual cura un '30%' de su vida max. Coste:70 energía\n"
-desh3="Se distrae e inconscientemente golpea al enemigo 3 a 4 veces con sus raíces causando 20 a 25 con cada golpe. Coste:50 energía\n"
+desh2="Se come un Alfajor el cual cura un 50 de vida. Coste:70 energía\n"
+desh3="Se distrae e inconscientemente golpea al enemigo 2 a 4 veces con sus raíces causando 15 a 20 con cada golpe. Coste:60 energía\n"
 def habilidad1 (hp,energia):
     dmg_turno,heal=0,0
-    if energia>=90:
-        dmg_turno=100
-        energia=energia-90
+    if energia>=60:
+        dmg_turno=60
+        energia=energia-60
     else:
         dmg_turno,heal,energia=0,0,0
     return (dmg_turno,heal,energia)
@@ -19,8 +19,8 @@ def habilidad1 (hp,energia):
 def habilidad2 (hp,energia):
     dmg_turno,heal=0,0
     if energia>=70:
-        heal=heal+(hp*(30/100))
-        energia=energia-90
+        heal=50
+        energia=energia-70
         dmg_turno=0
     else:
         dmg_turno,heal,energia=0,0,0
@@ -30,9 +30,9 @@ def habilidad3 (hp,energia):
     dmg_turno,heal=0,0
     import random
     if energia>=60:
-        times=random.randint(3,4)
+        times=random.randint(2,4)
         for i in range (times):
-            dtimes=random.randint(20,25)
+            dtimes=random.randint(15,20)
             dmg_turno=dmg_turno+dtimes
         energia=energia-60
     else:

@@ -1,12 +1,12 @@
 dmg=30
-dmg2=60
+dmg2=40
 hp=375
 energia=150
 name="Stewie"
 des="Encontró su sombrero de bruja en un tacho de basura. Ahora cree que domina las artes arcanas, pero solo son sus amigos escondidos arrojando basura.\n"
 desh1="Bebe un elixir místico rejuvenecedor (una gaseosa que encontró en la basura) curandolo 100 de vida  Coste 100 de energia\n"
-desh2="Lanza un ataque psiquico. El enemigo queda impactado de tal suciedad y por ello recibe 90 de daño. turnos Coste: 70 de energía\n"
-desh3="Invoca proyectiles extremadamente punzantes causando 60 de daño. Coste: 20 de energía (Realmente son sus amigos arrojando pedazos de vidrio que encontraron en el camino)\n"
+desh2="Lanza un ataque psiquico. El enemigo queda impactado de tal suciedad y por ello recibe 70 de daño. turnos Coste: 70 de energía\n"
+desh3="Invoca proyectiles extremadamente punzantes causando 50 de daño. Coste: 20 de energía (Realmente son sus amigos arrojando pedazos de vidrio que encontraron en el camino)\n"
 
 def habilidad1(hp,energia):
     dmg_turno,heal=0,0
@@ -20,7 +20,7 @@ def habilidad1(hp,energia):
 def habilidad2(hp,energia):
     dmg_turno,heal=0,0
     if energia>=70:
-        dmg_turno=90
+        dmg_turno=70
         energia=energia-70
     else:
         dmg_turno,heal,energia=0,0,0
@@ -29,7 +29,7 @@ def habilidad2(hp,energia):
 def habilidad3(hp,energia):
     dmg_turno,heal=0,0
     if energia>=20:
-        dmg_turno=60
+        dmg_turno=50
         energia=energia-20
     else:
         dmg_turno,heal,energia=0,0,0

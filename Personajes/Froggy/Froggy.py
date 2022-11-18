@@ -1,17 +1,17 @@
-dmg=80
-dmg2=100
-hp=350
+dmg=50
+dmg2=65
+hp=375
 energia=150
 name="Froggy"
 des="Su pasión por el origami es tan grande que su cuerpo se volvió uno. \n Gracias a su poco peso ganó mucha agilidad, pero ahora odia el viento.\n"
-desh1="Vuela (evitando el viento) con el fin de envestir al enemigo causando 140 de DMG. Coste 100 de energía\n"
-desh2="Con su pierna filosa, corta al enemigo 40-70 (DMG) y se cura un '40%' del daño realizado. 50 Coste de energía\n"
-desh3="Arroja un cisne de origami (que a veces usa como sombrero) causando 90-110 de DMG. Coste 40 de energía\n"
+desh1="Vuela (evitando el viento) con el fin de envestir al enemigo causando 100 de DMG. Coste 100 de energía\n"
+desh2="Con su pierna filosa, corta al enemigo 40-70 (DMG) y se cura 40 de HP. 60 Coste de energía\n"
+desh3="Arroja un cisne de origami (que a veces usa como sombrero) causando 75-85 de DMG. Coste 50 de energía\n"
 
 def habilidad1(hp,energia):
     dmg_turno,heal=0,0
     if energia>=100:
-        dmg_turno=120
+        dmg_turno=100
         energia=energia-100
     else:
         dmg_turno,heal,energia=0,0,0
@@ -20,10 +20,10 @@ def habilidad1(hp,energia):
 def habilidad2(hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia>=50:
-        dmg_turno=random.randint(40,70)
-        heal=dmg_turno+(dmg_turno*(40/100))
-        energia=energia-50
+    if energia>=60:
+        dmg_turno=random.randint(45,70)
+        heal=40
+        energia=energia-60
     else:
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
@@ -31,9 +31,9 @@ def habilidad2(hp,energia):
 def habilidad3(hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia>=40:
-        dmg_turno=random.randint(90,110)
-        energia=energia-40
+    if energia>=50:
+        dmg_turno=random.randint(70,85)
+        energia=energia-50
     else:
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
