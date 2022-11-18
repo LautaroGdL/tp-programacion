@@ -1,0 +1,12 @@
+40,45,600,150,Arbutus,Accidentalmente se tropieza aplastando al enemigo realizando al enemigo 100 de daño. (Se disculpa y levanta nuevamente) Coste: 90 energía
+,Se come un Alfajor el cual cura un '30%' de su vida max. Coste:70 energía
+,Se distrae e inconscientemente golpea al enemigo 3 a 4 veces con sus raíces causando 20 a 25 con cada golpe. Coste:50 energía
+,Arbutus lo supo desde el principio. Lonsi no era un león. Era una flor. Lo dedujo gracias a sus bastos conocimientos en botánica (y a que se le cayó el disfraz luego de ser derrotado).
+ Pero el vió algo en Lonsi que nadie hizo, a un alma gentil pero asustada, alguien con defectos pero con buenas intenciones. El vio a un gran amigo.
+ Comenzaron a hablar y su conexión fue natural, sintieron que tenían las mismas raíces (no porque ambos fuesen plantas).
+ El tiempo pasó.... Hoy en día son un dúo muy famoso que da conferencias sobre el medio ambiente. Sus charlas son profundas y demuestran mucho experiencia sobre el campo, el problema es que hablan tanto que nunca terminan.
+,No fue capaz de desenmascarar la farsa de Lonsi. El estaba seguro de que era una flor, pero nadie le creía.
+ Ello se volvió la única cosa de la que hablaba. No podía parar. No hasta que la gente lo supiera. Habló y habló, pero nadie le creyó.
+ Con el tiempo fue tachado de paranoico, un loco más. Perdió tanto su trabajo como su cordura en el camino. 
+ Se lo puede ver por los prados repitiendo lo mismo una y otra vez: '¡Lonsi es una flor ¿No lo ven? No le crean al gobierno!
+',

@@ -18,10 +18,17 @@ def basico(mini, maxi):
     return dmg 
 
 
-def importarpersonaje(jugador, nro):
+def importarjugador(jugador, nro):
     '''Genera las estadisticas del personaje que se elige'''
     seleccion_personaje.select_character(jugador, nro)
     stats=funcion_csv.leer_ascii("load.txt")
+    stats = stats[0].split(',')
+    return stats
+
+def importarenemigo(jugador, nro):
+    '''Genera las estadisticas del personaje que se elige'''
+    seleccion_personaje.select_character(jugador, nro)
+    stats=funcion_csv.leer_ascii("enemy.txt")
     stats = stats[0].split(',')
     return stats
 
@@ -157,7 +164,7 @@ def generarenemigosarcade(n):
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
-        en = importarpersonaje(0, x)
+        en = importarenemigo(0, x)
         list.append(en)
         if i == n-1:
             lonsi = importarlonsi(0, 666)
@@ -170,7 +177,7 @@ def generarenemigosversus(n):
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
-        en = importarpersonaje(0, x)
+        en = importarenemigo(0, x)
         if i == n:
             lonsi = importarlonsi(0, 666)
         list.append(en)
@@ -179,7 +186,7 @@ def generarenemigosversus(n):
 def arcade():
     '''Programa principal, mezcla de todos las funciones anteriores'''
     print("FIGHT!")
-    personaje = importarpersonaje(1, 0)
+    personaje = importarjugador(1, 0)
     lista_Enemigos = generarenemigosarcade(1)
     for i in range(len(lista_Enemigos)):
         batalla(personaje, lista_Enemigos[i])
@@ -187,7 +194,7 @@ def arcade():
 def versus():
     '''Programa principal, mezcla de todos las funciones anteriores '''
     print("FIGHT!")
-    personaje = importarpersonaje(1, 0)
+    personaje = importarjugador(1, 0)
     lista_Enemigos = generarenemigosversus(2)
     for i in range(len(lista_Enemigos)-1):
         batalla(personaje, lista_Enemigos[i])

@@ -38,6 +38,15 @@ def escribir_csv(personaje):
     return list
     arch.close()
 
+def enemigo_csv(personaje):
+    '''Escribe un archivo temporal que guarda las variables del enemigo para luego ser llamado como una lista'''
+    lista = [str(personaje.dmg),str(personaje.dmg2),str(personaje.hp),str(personaje.energia),str(personaje.name),str(personaje.desh1),str(personaje.desh2),str(personaje.desh3),str(personaje.win),str(personaje.lose)]
+    arch = open('Ascii/enemy.txt', 'wt') 
+    for i in lista:
+        arch.write(i + ",")
+    return list
+    arch.close()
+
 def guardar_nombre(name):
     lista = [name]
     arch = open(f'Ascii/name.txt', 'wt') 

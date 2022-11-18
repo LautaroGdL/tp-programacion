@@ -33,6 +33,7 @@ def select_character(jugador, choice):
                 print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Gregg.hp ,"||","Energia: ",Gregg.energia,"||","Daño: ",Gregg.dmg,"Daño 2: ","||",Gregg.dmg2,"\n" + Gregg.des)
             funcion_csv.escribir_csv(Gregg)
+            funcion_csv.enemigo_csv(Gregg)
 
         elif choice == "2":
             tools.clear()
@@ -41,6 +42,7 @@ def select_character(jugador, choice):
                     print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Arbutus.hp ,"||","Energia: ",Arbutus.energia,"||","Daño: ",Arbutus.dmg,"Daño 2: ","||",Arbutus.dmg2,"\n" + Arbutus.des)
             funcion_csv.escribir_csv(Arbutus)
+            funcion_csv.enemigo_csv(Arbutus)
 
         elif choice == "3":
             tools.clear()
@@ -49,6 +51,7 @@ def select_character(jugador, choice):
                     print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Huigh.hp ,"||","Energia: ",Huigh.energia,"||","Daño: ",Huigh.dmg,"Daño 2: ","||",Huigh.dmg2,"\n" + Huigh.des)
             funcion_csv.escribir_csv(Huigh)
+            funcion_csv.enemigo_csv(Huigh)
 
         elif choice == "4":
             tools.clear()
@@ -57,6 +60,7 @@ def select_character(jugador, choice):
                     print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Stewie.hp ,"||","Energia: ",Stewie.energia,"||","Daño: ",Stewie.dmg,"Daño 2: ","||",Stewie.dmg2,"\n" + Stewie.des)
             funcion_csv.escribir_csv(Stewie)
+            funcion_csv.enemigo_csv(Stewie)
 
         elif choice == "5":
             tools.clear()
@@ -65,6 +69,7 @@ def select_character(jugador, choice):
                     print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Willy.hp ,"||","Energia: ",Willy.energia,"||","Daño: ",Willy.dmg,"Daño 2: ","||",Willy.dmg2,"\n" + Willy.des)
             funcion_csv.escribir_csv(Willy)
+            funcion_csv.enemigo_csv(Willy)
 
         elif choice == "6":
             tools.clear() 
@@ -73,6 +78,7 @@ def select_character(jugador, choice):
                     print(lista_texto[i].replace("\n", ""))
             print("Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg,"Daño 2: ","||",Froggy.dmg2,"\n" + Froggy.des)
             funcion_csv.escribir_csv(Froggy)
+            funcion_csv.enemigo_csv(Froggy)
 
         elif choice == "666":
             tools.clear() 
@@ -115,6 +121,6 @@ def seleccion_p():
     for i in range(0, len(seleccion_texto)):
         print(seleccion_texto[i].replace("\n", ""))
 
-# funcion_csv.escribir_csv(Gregg)
-# x = funcion_csv.leer_ascii("load.txt")
-# print(x[0])
+funcion_csv.escribir_csv(Gregg)
+x = funcion_csv.leer_ascii("load.txt")
+print(x[0])
