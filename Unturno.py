@@ -51,7 +51,7 @@ def seleccionarhabilidad(name, ability):
             
             ability = print("|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4| ")
             ability = input(">")
-            while ability not in ("2", "3", "4", "1"):
+            while ability not in ("1", "2", "3", "4"):
                 ability = print("Movimiento no valido, porfavor volver a seleccionar movimiento:\n|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4|")
                 ability = input(">")
             if ability in ("2","3","4"):
@@ -187,7 +187,7 @@ def arcade():
     '''Programa principal, mezcla de todos las funciones anteriores'''
     print("FIGHT!")
     personaje = importarjugador(1, 0)
-    lista_Enemigos = generarenemigosarcade(1)
+    lista_Enemigos = generarenemigosarcade(2)
     for i in range(len(lista_Enemigos)):
         batalla(personaje, lista_Enemigos[i])
 
