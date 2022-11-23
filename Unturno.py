@@ -160,7 +160,6 @@ def batalla(ingame, enemy):
         print()
 
     print()
-    primera = True
     if ingame[2] > 0:
         usuario = funcion_csv.leer_ascii("name.txt")
         name = usuario[0].replace(",", "" + "\n")
@@ -168,12 +167,12 @@ def batalla(ingame, enemy):
         ingame[2] += 20
         ingame[3] += 20
         tools.clear()
-        return 1
+        return 1, primera
     elif primera:
         tools.clear()
         input("Finalizó el combate, has perdido. ")
         primera = False
-        return 0
+        return 0, primera
 
         
         
@@ -207,8 +206,9 @@ def arcade():
     print("FIGHT!")
     personaje = importarjugador(1, 0)
     lista_Enemigos = generarenemigosarcade(2)
+    primera = True
     for i in range(len(lista_Enemigos)):
-        ganar = batalla(personaje, lista_Enemigos[i])
+        ganar, primera = batalla(personaje, lista_Enemigos[i], primera)
     tools.clear()
     finales.finales(personaje[4], ganar)
 
