@@ -1,28 +1,28 @@
-dmg=40
-dmg2=50
-hp=450
-energia=150
+dmg=2
+dmg2=5
+hp=26
+energia=50
 name="Gregg"
-des="Ganó su apodo por su extravagante forma de hablar. \n Su arma de elección es cuchara, su mejor amigo pez espada. \n Forman un equipo muy balanceado y nutritivo (?)\n"
-desh1=" Gr-egg pega un cabezaso el cual infringe su daño base + 20. Coste=80 energia"
-desh2=" Cuchara con una mirada intensa le roba 60 de vida al enemigo y cura a Gr-egg.  Coste=60 energía\n"
-desh3=" El pez espada se mueve sin control dañando al enemigo Golpeando 1-3 veces, infligiendo de 30-35 de daño x cada golpe. Coste=40 energía\n"
+des="Ganó su apodo por su extravagante forma de hablar.\nSu arma de elección es cuchara, su mejor amigo pez espada.\nForman un equipo muy balanceado y nutritivo (?)\n"
+desh1=" Gr-egg pega un cabezaso el cual infringe su daño base + 10%. Coste=20 energia"
+desh2=" Cuchara con una mirada intensa le roba 15 de vida al enemigo y cura a Gr-egg. Coste=20 energía\n"
+desh3=" El pez espada se mueve sin control dañando al enemigo Golpeando 1-3 veces, infligiendo de 1-5 de daño x cada golpe. Coste=30 energía\n"
 
 def habilidad1 (hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia>=80:
-        dmg_turno=random.randint(50, 60)
-        energia=energia-80
+    if energia>=20:
+        dmg_turno=random.randint(3, 6)
+        energia=energia-20
     else:
         dmg_turno,heal,energia=0,0,0
     return (dmg_turno,heal,energia)
 
 def habilidad2 (hp,energia):
     dmg_turno,heal=0,0
-    if energia>=60:
-        heal=60
-        energia=energia-60
+    if energia>=30:
+        heal=15
+        energia=energia-20
         dmg_turno=heal
     else:
         dmg_turno,heal,energia=0,0,0
@@ -31,12 +31,12 @@ def habilidad2 (hp,energia):
 def habilidad3 (hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia>=50:
+    if energia>=30:
         times=random.randint(1,3)
         for i in range (times):
-            dtimes=random.randint(30,35)
+            dtimes=random.randint(1,4)
             dmg_turno=dmg_turno+dtimes
-        energia=energia-50
+        energia=energia-30
         heal=0
     else:
         dmg_turno,heal,energia=0,0,0

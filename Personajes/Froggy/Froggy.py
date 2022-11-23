@@ -1,18 +1,18 @@
-dmg=50
-dmg2=65
-hp=375
-energia=150
+dmg=3
+dmg2=5
+hp=23
+energia=50
 name="Froggy"
-des="Su pasión por el origami es tan grande que su cuerpo se volvió uno. \n Gracias a su poco peso ganó mucha agilidad, pero ahora odia el viento.\n"
-desh1="Vuela (evitando el viento) con el fin de envestir al enemigo causando 100 de DMG. Coste 100 de energía\n"
-desh2="Con su pierna filosa, corta al enemigo 40-70 (DMG) y se cura 40 de HP. 60 Coste de energía\n"
-desh3="Arroja un cisne de origami (que a veces usa como sombrero) causando 75-85 de DMG. Coste 50 de energía\n"
+des="Su pasión por el origami es tan grande que su cuerpo se volvió uno.\nGracias a su poco peso ganó mucha agilidad, pero ahora odia el viento.\n"
+desh1="Vuela (evitando el viento) con el fin de envestir al enemigo causando 12 de DMG. Coste 30 de energía\n"
+desh2="Con su pierna filosa, corta al enemigo 2-7 (DMG) y se cura 40 de HP. 20 Coste de energía\n"
+desh3="Arroja un cisne de origami (que a veces usa como sombrero) causando 5-9 de DMG. Coste 20 de energía\n"
 
 def habilidad1(hp,energia):
     dmg_turno,heal=0,0
-    if energia>=100:
-        dmg_turno=100
-        energia=energia-100
+    if energia>=30:
+        dmg_turno=12
+        energia=energia-30
     else:
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
@@ -20,10 +20,10 @@ def habilidad1(hp,energia):
 def habilidad2(hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia>=60:
-        dmg_turno=random.randint(45,70)
-        heal=40
-        energia=energia-60
+    if energia>=20:
+        dmg_turno=random.randint(2,7)
+        heal=10
+        energia=energia-20
     else:
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
@@ -31,9 +31,9 @@ def habilidad2(hp,energia):
 def habilidad3(hp,energia):
     dmg_turno,heal=0,0
     import random
-    if energia>=50:
-        dmg_turno=random.randint(70,85)
-        energia=energia-50
+    if energia>=20:
+        dmg_turno=random.randint(5,9)
+        energia=energia-20
     else:
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
