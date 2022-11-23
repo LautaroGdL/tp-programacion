@@ -31,7 +31,7 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Gregg/Gregg_ascii.txt")
             for i in range(0, len(lista_texto)):
                 print(lista_texto[i].replace("\n", ""))
-            print(" Name:",Gregg.name,"\n","Hp: ",Gregg.hp ,"||","Energia: ",Gregg.energia,"||","Daño: ",Gregg.dmg,"Daño 2: ","||",Gregg.dmg2,"\n" + Gregg.des)
+            print("Nombre:",Gregg.name,"\n","HP: ",Gregg.hp ,"||","Energia: ",Gregg.energia,"||","Daño: ",Gregg.dmg,"-",Gregg.dmg2,"\n" + Gregg.des)
             funcion_csv.escribir_csv(Gregg)
             funcion_csv.enemigo_csv(Gregg)
 
@@ -40,7 +40,7 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Arbutus/Arbutus_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-            print(" Name:",Arbutus.name,"\n","Hp: ",Arbutus.hp ,"||","Energia: ",Arbutus.energia,"||","Daño: ",Arbutus.dmg,"Daño 2: ","||",Arbutus.dmg2,"\n" + Arbutus.des)
+            print("Nombre:",Arbutus.name,"\n","HP: ",Arbutus.hp ,"||","Energia: ",Arbutus.energia,"||","Daño: ",Arbutus.dmg,"-",Arbutus.dmg2,"\n" + Arbutus.des)
             funcion_csv.escribir_csv(Arbutus)
             funcion_csv.enemigo_csv(Arbutus)
 
@@ -49,7 +49,7 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Huigh/Huigh_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-            print(" Name:",Huigh.name,"\n","Hp: ",Huigh.hp ,"||","Energia: ",Huigh.energia,"||","Daño: ",Huigh.dmg,"Daño 2: ","||",Huigh.dmg2,"\n" + Huigh.des)
+            print("Nombre:",Huigh.name,"\n","HP: ",Huigh.hp ,"||","Energia: ",Huigh.energia,"||","Daño: ",Huigh.dmg,"-",Huigh.dmg2,"\n" + Huigh.des)
             funcion_csv.escribir_csv(Huigh)
             funcion_csv.enemigo_csv(Huigh)
 
@@ -58,7 +58,7 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Stewie/Stewie_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-            print(" Name:",Stewie.name,"\n","Hp: ",Stewie.hp ,"||","Energia: ",Stewie.energia,"||","Daño: ",Stewie.dmg,"Daño 2: ","||",Stewie.dmg2,"\n" + Stewie.des)
+            print("Nombre:",Stewie.name,"\n","HP: ",Stewie.hp ,"||","Energia: ",Stewie.energia,"||","Daño: ",Stewie.dmg,"-",Stewie.dmg2,"\n" + Stewie.des)
             funcion_csv.escribir_csv(Stewie)
             funcion_csv.enemigo_csv(Stewie)
 
@@ -67,7 +67,7 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Willy/Willy_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-            print(" Name:",Willy.name,"\n","Hp: ",Willy.hp ,"||","Energia: ",Willy.energia,"||","Daño: ",Willy.dmg,"Daño 2: ","||",Willy.dmg2,"\n" + Willy.des)
+            print("Nombre:",Willy.name,"\n","HP: ",Willy.hp ,"||","Energia: ",Willy.energia,"||","Daño: ",Willy.dmg,"-",Willy.dmg2,"\n" + Willy.des)
             funcion_csv.escribir_csv(Willy)
             funcion_csv.enemigo_csv(Willy)
 
@@ -76,7 +76,7 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Froggy/Froggy_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-            print(" Name:",Froggy.name,"\n","Hp: ",Froggy.hp ,"||","Energia: ",Froggy.energia,"||","Daño: ",Froggy.dmg,"Daño 2: ","||",Froggy.dmg2,"\n" + Froggy.des)
+            print("Nombre:",Froggy.name,"\n","HP:",Froggy.hp ,"||","Energia:",Froggy.energia,"||","Daño:",Froggy.dmg,"-",Froggy.dmg2,"\n" + Froggy.des)
             funcion_csv.escribir_csv(Froggy)
             funcion_csv.enemigo_csv(Froggy)
 
@@ -85,7 +85,7 @@ def select_character(jugador, choice):
             lista_texto=funcion_csv.leer_csv("Personajes/Lonsi/Lonsi_ascii.txt")
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-            print("Hp: ",Lonsi.hp ,"||","Energia: ",Lonsi.energia,"||","Daño: ",Lonsi.dmg,"Daño 2: ","||",Lonsi.dmg2,"\n" + Lonsi.des)
+            print("HP: ",Lonsi.hp ,"||","Energia: ",Lonsi.energia,"||","Daño: ",Lonsi.dmg,"-",Lonsi.dmg2,"\n" + Lonsi.des)
             
 
 
@@ -103,7 +103,7 @@ def select_character(jugador, choice):
             menu = False
         else:
             print()
-            seleccionar_personaje = input("Seleccionar este personaje? \nElija: \n\nAceptar: 1 \nVolver: Otra tecla \n> ").lower()
+            seleccionar_personaje = input("Desea elegir este personaje? \nSelecione una opción:\n Aceptar: 1 \n Volver: Enter \n> ").lower()
 
             while seleccionar_personaje:
                 tools.clear()

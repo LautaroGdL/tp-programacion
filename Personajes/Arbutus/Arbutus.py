@@ -3,10 +3,10 @@ dmg2=3
 hp=35
 energia=50
 name="Arbutus"
-des="Sus hojas huyeron del miedo que inspira su apariencia, pero en el interior posee un corazón de roble.\nAdora enseñar botánica pero suele ir por las ramas mientras habla.\n"
-desh1="Accidentalmente se tropieza aplastando al enemigo realizando al enemigo 4 de DMG. (Se disculpa y levanta nuevamente) Coste: 20 energía\n"
-desh2="Se come un Alfajor el cual cura un 10 de vida. Coste:30 energía\n"
-desh3="Se distrae e inconscientemente golpea al enemigo 2 a 3 veces con sus raíces causando 1 a 3 con cada golpe. Coste:30 energía\n"
+des="Sus hojas huyeron del miedo que inspira su apariencia, pero en el interior posee un corazón de roble. Adora enseñar botánica pero suele ir por las ramas mientras habla."
+desh1="Accidentalmente se tropieza aplastando al enemigo realizando al enemigo 4 de DMG. (Se disculpa y levanta nuevamente) Coste: 20 energía"
+desh2="Se come un Alfajor el cual cura un 10 de vida. Coste:30 energía"
+desh3="Se distrae e inconscientemente golpea al enemigo 2 a 3 veces con sus raíces causando 1 a 3 con cada golpe. Coste:30 energía"
 def habilidad1 (hp,energia):
     dmg_turno,heal=0,0
     if energia>=20:

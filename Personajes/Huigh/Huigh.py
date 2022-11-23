@@ -3,10 +3,10 @@ dmg2=4
 hp=26
 energia=50
 name="Huigh"
-des="No se sabe mucho de Huigh, pero según testimonios '...de repente se acercó tremendo mono muchacho, encima agarra y me dice 'tenes una banana?'. Más firme que si, la banana no se le niega a nadie.\nTodo bien con el mono, tranquilo, manso. Es contundente la cosa, imaginate que hasta se volvió pirata porque le robaron una sola banana, no se come ni una el monki.\n"
-desh1="Llama a su barco, este dispara 3 bolas de cañón cada una infringe 3 de daño con un '50%' de golpear al objetivo. Coste 30 de energía\n"
-desh2="Embiste y apuñala al objetivo causando entre 4-7 DMG, curandose un '50%' del daño realizado. Coste 20 de energía\n"
-desh3="Se come una banana regenerando 15HP, esta crazy el monki. Coste 20 de energía\n"
+des="No se sabe mucho de Huigh, pero según testimonios '...de repente se acercó tremendo mono muchacho, encima agarra y me dice 'tenes una banana?'. Más firme que si, la banana no se le niega a nadie. Todo bien con el mono, tranquilo, manso. Es contundente la cosa, imaginate que hasta se volvió pirata porque le robaron una sola banana, no se come ni una el monki."
+desh1="Llama a su barco, este dispara 3 bolas de cañón cada una infringe 3 de daño con un '50%' de golpear al objetivo. Coste 30 de energía"
+desh2="Embiste y apuñala al objetivo causando entre 4-7 DMG, curandose un '50%' del daño realizado. Coste 20 de energía"
+desh3="Se come una banana regenerando 15HP, esta crazy el monki. Coste 20 de energía"
 
 def habilidad1(hp,energia):
     dmg_turno,heal=0,0

@@ -52,7 +52,7 @@ def seleccionarhabilidad(name, ability):
             ability = print("|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4| ")
             ability = input(">")
             while ability not in ("1", "2", "3", "4"):
-                ability = print("Movimiento no valido, porfavor volver a seleccionar movimiento:\n|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4|")
+                ability = print("Movimiento no valido, seleccione otro movimiento:\n|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4|")
                 ability = input(">")
             if ability in ("2","3","4"):
                 ability = int(ability)
@@ -69,21 +69,21 @@ def seleccionarhabilidad(name, ability):
             changes.append(changes2)
             changes.append(changes3)
             if changes[1] == 0 and changes[0] == 0 and jugador == 1:
-                print("No tiene suficiente energia, selecciona otra habilidad. ")
+                print("No tienes suficiente energía, selecciona otra habilidad. ")
         elif ability == 6:
             changes1, changes2, changes3 = func.habilidad2(name[2], name[3])
             changes.append(changes1)
             changes.append(changes2)
             changes.append(changes3)
             if changes[1] == 0 and changes[0] == 0 and jugador == 1:
-                print("No tiene suficiente energia, selecciona otra habilidad. ")
+                print("No tienes suficiente energía, selecciona otra habilidad. ")
         elif ability == 7:
             changes1, changes2, changes3 = func.habilidad3(name[2], name[3])
             changes.append(changes1)
             changes.append(changes2)
             changes.append(changes3)
             if changes[1] == 0 and changes[0] == 0 and jugador == 1:
-                print("No tiene suficiente energia, selecciona otra habilidad. ")
+                print("No tienes suficiente energía, selecciona otra habilidad. ")
         elif ability == 8:
             x = basico(name[0], name[1])
             changes = [x, 0, name[3]+60]
@@ -94,22 +94,22 @@ def seleccionarhabilidad(name, ability):
 
 def batalla(ingame, enemy):
     Battle = True
-    '''Batallaepica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida'''
+    '''Batalla épica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida'''
     print("Enemigo: ", enemy[4] )
     ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
-    print("Empieza un duelo legendario entre estos 2 adversarios por el destino de la humanidad..... y los otros")
+    print("Comienza un duelo legendario entre dos adversarios por el destino del reinonsi..... (y otros)")
     while Battle:
         funcion_csv.personaje_txt(enemy[4])
 
         '''Inicio de la batalla'''
         enebar = bars.gen_barras(enemy[2], enemy[3])
         bars.mostrar_barras(enebar)
-        print("vida: ", enemy[2], "|energia: ",  enemy[3])
+        print("Vida: ", enemy[2], "| Energía: ",  enemy[3])
         print("TU:")
         tubar = bars.gen_barras(ingame[2], ingame[3])
         bars.mostrar_barras(tubar)
-        print("vida: ", ingame[2], "|energia: ", ingame[3])
+        print("Vida:", ingame[2], "| Energía:", ingame[3])
         
         while ingame[2] >= 0 and enemy[2] >= 0:
             #Turno del jugador
@@ -127,12 +127,12 @@ def batalla(ingame, enemy):
             print("ENEMIGO:")
             enebar = bars.gen_barras(enemy[2], enemy[3])
             bars.mostrar_barras(enebar)
-            print("vida: ", enemy[2], "|energia: ",  enemy[3])
+            print("Vida:", enemy[2], "| Energía:",  enemy[3])
             print()
             print("JUGADOR:")
             tubar = bars.gen_barras(ingame[2], ingame[3])
             bars.mostrar_barras(tubar)
-            print("vida: ", ingame[2], "|energia: ", ingame[3])
+            print("Vida:", ingame[2], "| Energía:", ingame[3])
 
             #Cambios en personaje principal
             ingame[2] += (changes[1] - echanges[0])
@@ -149,11 +149,11 @@ def batalla(ingame, enemy):
     if ingame[2] > 0:
         usuario = funcion_csv.leer_ascii("name.txt")
         name = usuario[0].replace(",", "")
-        print(f"Fin del combate, has ganado {name}!")
+        print(f"Finalizó el combate, has ganado {name}!")
         ingame[2] += 300
     else:
         tools.clear()
-        print("Fin del combate, has perdido.")
+        print("Finalizó el combate, has perdido.")
         
         
 

@@ -28,7 +28,7 @@ def iniciar_juego():
                 tools.clear()
                 reglas_p()
                 print()
-                print("-Elegir a un personaje con el cual jugaras el modo Arcade y Modo Versus\n-Modo Arcade: Pelear contra 5 oponentes y un jefe final para completar la historia de tu personaje.\n-Modo Versus: Elige a un personaje y lucha contra la maquina.\n\nDiviertete y gana!!!")
+                print("-Selecciona un personaje con el que jugaras.(Arcade y Versus)\n-Modo Arcade: Pelearas contra cinco oponentes y con el temible Lonsi (el jefe final) para completar el juego.\n-Modo Versus: Eligirás un personaje y lucharas contra la maquina.\n-Galería: Podrás ver el diseño de cada personaje y sus habilidades\n\nDicho esto, te deseamos buena suerte en tus peleas!. No dejes que Lonsi gane!")
                 rules = False
                 choice = ""
                 input("> ")
@@ -77,7 +77,7 @@ def iniciar_juego():
                 play = False
                 menu = True
 
-            desicion = input("Desea volver a jugar? (y/n): ")
+            desicion = input("Deseas volver a jugar? (y/n): ")
             if desicion == "n":
                 play = False
                 menu = True
