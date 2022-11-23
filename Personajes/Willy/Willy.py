@@ -34,6 +34,7 @@ def habilidad3(hp,energia):
     if energia>=30:
         heal=15
         dmg_turno=0
+        energia=energia-30
     else:
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
