@@ -98,7 +98,7 @@ def seleccionarhabilidad(name, jugador):
     return changes
 
 
-def batalla(ingame, enemy):
+def batalla(ingame, enemy, primera):
     Battle = True
     '''Batalla épica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida'''
     print("Enemigo: ", enemy[4] )
