@@ -86,6 +86,7 @@ def select_character(jugador, choice):
             for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
             print("HP: ",Lonsi.hp ,"||","Energia: ",Lonsi.energia,"||","Daño: ",Lonsi.dmg,"-",Lonsi.dmg2,"\n" + Lonsi.des)
+            funcion_csv.escribir_csv(Lonsi)
             
 
 

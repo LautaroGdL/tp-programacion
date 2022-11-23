@@ -215,6 +215,7 @@ def arcade():
     lista_Enemigos = generarenemigosarcade(2)
     for i in range(len(lista_Enemigos)):
         ganar = batalla(personaje, lista_Enemigos[i])
+    tools.clear()
     finales.finales(personaje[4], ganar)
 
 def versus():

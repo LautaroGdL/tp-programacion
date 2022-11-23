@@ -4,8 +4,8 @@ def finales(name, win):
     if win == 1:
         character = importar_personaje.importar_pj(name)
         print(character.win)
-        input("continue: ")
+        input("Continuar: Enter ")
     else:
         character = importar_personaje.importar_pj(name)
         print(character.win)
-        input("continue: ")
+        input("Continuar: Enter ")

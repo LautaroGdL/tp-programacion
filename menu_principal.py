@@ -76,7 +76,7 @@ def iniciar_juego():
                 Unturno.versus()
                 play = False
                 menu = True
-
+            tools.clear()
             desicion = input("Deseas volver a jugar? (y/n): ")
             if desicion == "n":
                 play = False
