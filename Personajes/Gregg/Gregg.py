@@ -4,9 +4,9 @@ hp=26
 energia=50
 name="Gregg"
 des="Ganó su apodo por su extravagante forma de hablar. Su arma de elección es cuchara, su mejor amigo pez espada. Forman un equipo muy balanceado y nutritivo (?)"
-desh1=" Gr-egg pega un cabezaso el cual infringe su daño base + 10%. Coste=20 energia"
-desh2=" Cuchara con una mirada intensa le roba 15 de vida al enemigo y cura a Gr-egg. Coste=20 energía"
-desh3=" El pez espada se mueve sin control dañando al enemigo Golpeando 1-3 veces, infligiendo de 1-5 de daño x cada golpe. Coste=30 energía"
+desh1="Gr-egg pega un cabezaso el cual infringe su daño base + 10%. Coste=20 energia"
+desh2="Cuchara con una mirada intensa le roba 15 de vida al enemigo y cura a Gr-egg. Coste=20 energía"
+desh3="El pez espada se mueve sin control dañando al enemigo Golpeando 1-3 veces, infligiendo de 1-5 de daño x cada golpe. Coste=30 energía"
 
 def habilidad1 (hp,energia):
     dmg_turno,heal=0,0
