@@ -31,48 +31,48 @@ def galeria():
                 lista_texto=funcion_csv.leer_csv("Personajes/Gregg/Gregg_ascii.txt")
                 for i in range(0, len(lista_texto)):
                     print(lista_texto[i].replace("\n", ""))
-                print("Nombre: ",Gregg.name,"\n" + Gregg.des)
+                print("Nombre: ",Gregg.name,"\n" + Gregg.des,"\n" + "Habilidad 1: ",Gregg.desh1,"\n" + "Habilidad 2: ",Gregg.desh2,"\n" + "Habilidad 3: ",Gregg.desh3)
                 
             elif choice == "2":
                 tools.clear()
                 lista_texto=funcion_csv.leer_csv("Personajes/Arbutus/Arbutus_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Nombre: ",Arbutus.name,"\n" + Arbutus.des)
+                print("Nombre: ",Arbutus.name,"\n" + Arbutus.des,"\n" + "Habilidad 1: ",Arbutus.desh1,"\n" + "Habilidad 2: ",Arbutus.desh2,"\n" + "Habilidad 3: ",Arbutus.desh3)
 
             elif choice == "3":
                 tools.clear()
                 lista_texto=funcion_csv.leer_csv("Personajes/Huigh/Huigh_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Nombre: ",Huigh.name,"\n" + Huigh.des)
+                print("Nombre: ",Huigh.name,"\n" + Huigh.des,"\n" + "Habilidad 1: ",Huigh.desh1,"\n" + "Habilidad 2: ",Huigh.desh2,"\n" + "Habilidad 3: ",Huigh.desh3)
 
             elif choice == "4":
                 tools.clear()
                 lista_texto=funcion_csv.leer_csv("Personajes/Stewie/Stewie_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Nombre: ",Stewie.name,"\n" + Stewie.des)
+                print("Nombre: ",Stewie.name,"\n" + Stewie.des,"\n" + "Habilidad 1: ",Stewie.desh1,"\n" + "Habilidad 2: ",Stewie.desh2,"\n" + "Habilidad 3: ",Stewie.desh3)
             elif choice == "5":
                 tools.clear()
                 lista_texto=funcion_csv.leer_csv("Personajes/Willy/Willy_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Nombre: ",Willy.name,"\n" + Willy.des)
+                print("Nombre: ",Willy.name,"\n" + Willy.des,"\n" + "Habilidad 1: ",Willy.desh1,"\n" + "Habilidad 2: ",Willy.desh2,"\n" + "Habilidad 3: ",Willy.desh3)
 
             elif choice == "6":
                 tools.clear() 
                 lista_texto=funcion_csv.leer_csv("Personajes/Froggy/Froggy_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Nombre: ",Froggy.name,"\n" + Froggy.des)
+                print("Nombre: ",Froggy.name,"\n" + Froggy.des,"\n" + "Habilidad 1: ",Froggy.desh1,"\n" + "Habilidad 2: ",Froggy.desh2,"\n" + "Habilidad 3: ",Froggy.desh3)
             
             elif choice == "7":
                 tools.clear() 
                 lista_texto=funcion_csv.leer_csv("Personajes/Lonsi/Lonsi_ascii.txt")
                 for i in range(0, len(lista_texto)):
                         print(lista_texto[i].replace("\n", ""))
-                print("Nombre: ",Lonsi.name,"\n" + Lonsi.des)
+                print("Nombre: ",Lonsi.name,"\n" + Lonsi.des,"\n" + "Habilidad 1: ",Lonsi.desh1,"\n" + "Habilidad 2: ",Lonsi.desh2,"\n" + "Habilidad 3: ",Lonsi.desh3)
             
             elif choice == "":
                 run = False
