@@ -39,54 +39,66 @@ def importarlonsi(jugador, nro):
     stats = stats[0].split(',')
     return stats
 
-def seleccionarhabilidad(name, ability):
+def seleccionarhabilidad(name, jugador):
     '''Selecciona la habilidad que se quiere utilizar y devuelve los cambios en hp, st, energy'''
     func=importar_personaje.importar_pj(name[4])
     turno = True
     changes = []
-    jugador = ability
     while turno:
-        turno = True
-        if ability != 0:
+        if jugador != 0:
             
-            ability = print("|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4| ")
-            ability = input(">")
-            while ability not in ("1", "2", "3", "4"):
-                ability = print("Movimiento no valido, seleccione otro movimiento:\n|Ataque  =   1||Habilidad = 2|\n|Habilidad = 3||Habilidad = 4|")
-                ability = input(">")
-            if ability in ("2","3","4"):
-                ability = int(ability)
-                ability += 4
-            else:
-                ability = 8
+            print("Seleccionar habilidad")
+            print("--> 1: Ataque basico: Realizas entre", func.dmg,"y", func.dmg2, ". Regeneras energía. ;)" +"\n")
+            print("--> 2: Habilidad Basica")
+            print("         ", func.desh1 +"\n")
+            print("--> 3: Habilidad Comun: ")
+            print("         ", func.desh2 +"\n")
+            print("--> 4: Habilidad Default: ")
+            print("         ", func.desh3 +"\n")
+            habilidad = input(":> ")
+            while habilidad not in ("1", "2", "3", "4"):
+                print("Movimiento no valido, seleccione otro movimiento:\n")
+                print("--> 1: Ataque basico: Realizas entre", func.dmg,"y", func.dmg2, ". Regeneras energía. ;)" +"\n")
+                print("--> 2: Habilidad Basica")
+                print("         ", func.desh1 +"\n")
+                print("--> 3: Habilidad Comun: ")
+                print("         ", func.desh2 +"\n")
+                print("--> 4: Habilidad Default: ")
+                print("         ", func.desh3 +"\n")
+                habilidad = input(":> ")
+            habilidad = int(habilidad)
         else:
-            ability=random.randint(5, 8)
+            habilidad = random.randint(1, 4)
+        print()
         changes1, changes2, changes1 = 0, 0, 0
         '''Mantiene en bucle hasta que se seleccione una habilidad que puedas tirar '''
-        if ability == 5:
+        if habilidad == 2:
             changes1, changes2, changes3 = func.habilidad1(name[2], name[3])
             changes.append(changes1)
             changes.append(changes2)
             changes.append(changes3)
             if changes[1] == 0 and changes[0] == 0 and jugador == 1:
                 print("No tienes suficiente energía, selecciona otra habilidad. ")
-        elif ability == 6:
+        elif habilidad == 3:
             changes1, changes2, changes3 = func.habilidad2(name[2], name[3])
             changes.append(changes1)
             changes.append(changes2)
             changes.append(changes3)
             if changes[1] == 0 and changes[0] == 0 and jugador == 1:
                 print("No tienes suficiente energía, selecciona otra habilidad. ")
-        elif ability == 7:
+        elif habilidad == 4:
             changes1, changes2, changes3 = func.habilidad3(name[2], name[3])
             changes.append(changes1)
             changes.append(changes2)
             changes.append(changes3)
             if changes[1] == 0 and changes[0] == 0 and jugador == 1:
                 print("No tienes suficiente energía, selecciona otra habilidad. ")
-        elif ability == 8:
+        elif habilidad == 1:
             x = basico(name[0], name[1])
-            changes = [x, 0, name[3]+60]
+            name[3] += 20
+            if name[3]>=50:
+                name[3] = 50
+            changes = [x, 0, name[3]]
         if changes[0] != 0 or changes[1] != 0:
             turno = False
     return changes
@@ -98,62 +110,57 @@ def batalla(ingame, enemy):
     print("Enemigo: ", enemy[4] )
     ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
+    tools.clear()
     print("Comienza un duelo legendario entre dos adversarios por el destino del reinonsi..... (y otros)")
-    while Battle:
-        funcion_csv.personaje_txt(enemy[4])
 
-        '''Inicio de la batalla'''
+    '''Inicio de la batalla'''    
+    while ingame[2] > 0 and enemy[2] > 0:
+        #Display de vida y st
+        funcion_csv.personaje_txt(enemy[4])
+        print("ENEMIGO:")
         enebar = bars.gen_barras(enemy[2], enemy[3])
         bars.mostrar_barras(enebar)
-        print("Vida: ", enemy[2], "| Energía: ",  enemy[3])
-        print("TU:")
+        print("Vida:", enemy[2], "| Energía:",  enemy[3])
+        print()
+        print("JUGADOR:")
         tubar = bars.gen_barras(ingame[2], ingame[3])
         bars.mostrar_barras(tubar)
         print("Vida:", ingame[2], "| Energía:", ingame[3])
+        print()
+
+        #Seleccion de habilidad del Own Character, y la pc
+        changes = seleccionarhabilidad(ingame, 1)
+        echanges = seleccionarhabilidad(enemy, 0)
         
-        while ingame[2] >= 0 and enemy[2] >= 0:
-            #Turno del jugador
-            #Seleccion de habilidad del Own Character, y la pc
-            changes = seleccionarhabilidad(ingame, 1)
-            echanges = seleccionarhabilidad(enemy, 0)
-            
-            tools.clear()
-            funcion_csv.personaje_txt(enemy[4])
-            #Display de daño
-            print()
-            print("Daño realizado: ", changes[0]) 
-            print("Daño recibido: ", echanges[0])
-            print()
-            print("ENEMIGO:")
-            enebar = bars.gen_barras(enemy[2], enemy[3])
-            bars.mostrar_barras(enebar)
-            print("Vida:", enemy[2], "| Energía:",  enemy[3])
-            print()
-            print("JUGADOR:")
-            tubar = bars.gen_barras(ingame[2], ingame[3])
-            bars.mostrar_barras(tubar)
-            print("Vida:", ingame[2], "| Energía:", ingame[3])
+        #Cambios en personaje principal
+        ingame[2] += (changes[1] - echanges[0])
+        ingame[3] = changes[2]
+        
 
-            #Cambios en personaje principal
-            ingame[2] += (changes[1] - echanges[0])
-            ingame[3] = changes[2]
-            
+        #Cambios ene enemigo
+        enemy[2] += (echanges[1] - changes[0])
+        enemy[3] = echanges[2]
+        
+        tools.clear()
+        funcion_csv.personaje_txt(enemy[4])
+        #Display de daño
+        print()
+        print("Daño realizado: ", changes[0]) 
+        print("Daño recibido: ", echanges[0], "| Curacion realizada: ", changes[1])
+        print()
 
-            #Cambios en personaje enemigo
-            enemy[2] += (echanges[1] - changes[0])
-            enemy[3] = echanges[2]
+        tools.clear()
 
-
-        Battle = False
     print()
     if ingame[2] > 0:
         usuario = funcion_csv.leer_ascii("name.txt")
-        name = usuario[0].replace(",", "")
+        name = usuario[0].replace(",", "", +"\n")
         print(f"Finalizó el combate, has ganado {name}!")
-        ingame[2] += 300
+        ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
     else:
         tools.clear()
         print("Finalizó el combate, has perdido.")
+
         
         
 

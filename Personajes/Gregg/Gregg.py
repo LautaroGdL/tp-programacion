@@ -20,7 +20,7 @@ def habilidad1 (hp,energia):
 
 def habilidad2 (hp,energia):
     dmg_turno,heal=0,0
-    if energia>=30:
+    if energia>=20:
         heal=15
         energia=energia-20
         dmg_turno=heal
