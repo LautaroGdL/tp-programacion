@@ -98,8 +98,7 @@ def seleccionarhabilidad(name, jugador):
     return changes
 
 
-def batalla(ingame, enemy, primera):
-    Battle = True
+def batalla(ingame, enemy):
     '''Batalla épica: Sistema de turnos hasta que la vida de alguno de los dos personajes pierda toda la vida'''
     print("Enemigo: ", enemy[4] )
     ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
@@ -167,12 +166,12 @@ def batalla(ingame, enemy, primera):
         ingame[2] += 20
         ingame[3] += 20
         tools.clear()
-        return 1, primera
-    elif primera:
+        return 1
+    else:
         tools.clear()
         input("Finalizó el combate, has perdido. ")
         primera = False
-        return 0, primera
+        return 0
 
         
         
@@ -206,9 +205,8 @@ def arcade():
     print("FIGHT!")
     personaje = importarjugador(1, 0)
     lista_Enemigos = generarenemigosarcade(2)
-    primera = True
     for i in range(len(lista_Enemigos)):
-        ganar, primera = batalla(personaje, lista_Enemigos[i], primera)
+        ganar = batalla(personaje, lista_Enemigos[i])
     tools.clear()
     finales.finales(personaje[4], ganar)
 
