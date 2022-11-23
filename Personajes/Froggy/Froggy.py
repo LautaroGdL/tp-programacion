@@ -38,5 +38,5 @@ def habilidad3(hp,energia):
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
-win="Su victoria ante Lonsi no significaba nada para Froggy. Todo este torneo no era mas que un mal necesario para llevar a cabo su verdadero plan. Un plan repleto de odio, uno que viene planificando cada detalle desde pequeño.\n Esto solo lo podría llevar a cabo alguien tan temerario como un sapo origami podría hacer: Declararle la guerra al aire.\n"
-lose="Lonsi asestó el ultimo golpe. Y con el Froggy desapareció. Los espectadores creerían que fue obra de Lonsi. Pero no. Fue el viento. El viento se llevó a Froggy.\n"
+win="Su victoria ante Lonsi no significaba nada para Froggy. Todo este torneo no era mas que un mal necesario para llevar a cabo su verdadero plan. Un plan repleto de odio, uno que viene planificando cada detalle desde pequeño.\nEsto solo lo podría llevar a cabo alguien tan temerario como un sapo origami podría hacer:\n Declararle la guerra al aire.\n"
+lose="Lonsi asestó el ultimo golpe. Y con el Froggy desapareció.\nLos espectadores creerían que fue obra de Lonsi. Pero no.\nFue el viento. El viento se llevó a Froggy.\n"

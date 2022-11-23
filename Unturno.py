@@ -42,22 +42,22 @@ def seleccionarhabilidad(name, jugador):
         if jugador != 0:
             
             print("Seleccionar habilidad")
-            print("--> 1: Ataque basico: Realizas entre", func.dmg,"y", func.dmg2, ". Regeneras energía. ;)" +"\n")
-            print("--> 2: Habilidad Basica")
+            print("--> 1: Ataque básico: Realizas entre", func.dmg,"y", func.dmg2, " además, regeneras 20 de energía" +"\n")
+            print("--> 2: Primera Habilidad")
             print("         ", func.desh1 +"\n")
-            print("--> 3: Habilidad Comun: ")
+            print("--> 3: Segunda Habilidad: ")
             print("         ", func.desh2 +"\n")
-            print("--> 4: Habilidad Default: ")
+            print("--> 4: Tercer Habilidad: ")
             print("         ", func.desh3 +"\n")
             habilidad = input(":> ")
             while habilidad not in ("1", "2", "3", "4"):
                 print("Movimiento no valido, seleccione otro movimiento:\n")
-                print("--> 1: Ataque basico: Realizas entre", func.dmg,"y", func.dmg2, ". Regeneras energía. ;)" +"\n")
-                print("--> 2: Habilidad Basica")
+                print("--> 1: Ataque basico: Realizas entre", func.dmg,"y", func.dmg2, " además, regeneras 20 de energía" +"\n")
+                print("--> 2: Primera Habilidad")
                 print("         ", func.desh1 +"\n")
-                print("--> 3: Habilidad Comun: ")
+                print("--> 3: Segunda Habilidad: ")
                 print("         ", func.desh2 +"\n")
-                print("--> 4: Habilidad Default: ")
+                print("--> 4: Tercer Habilidad: ")
                 print("         ", func.desh3 +"\n")
                 habilidad = input(":> ")
             habilidad = int(habilidad)
@@ -164,20 +164,14 @@ def batalla(ingame, enemy):
     if ingame[2] > 0:
         usuario = funcion_csv.leer_ascii("name.txt")
         name = usuario[0].replace(",", "" + "\n")
-        x = input(f"GANASTE {name}!!!_ Celebrar? _  Llorar porque todo es muy facil y ya nada causa satisfaccion? Los desafios ya no existen ya nada es como antes. ;(  ")
-        if x == "Llorar porque todo es muy facil y ya nada causa satisfaccion? Los desafios ya no existen ya nada es como antes. ;(":
-            input("Llora*")
+        x = input(f"Ganaste el duelo {name} Presione cualquier tecla para continuar")
         ingame[2] += 20
         ingame[3] += 20
+        tools.clear()
         return 1
     elif primera:
         tools.clear()
-        print("Finalizó el combate, has perdido. ")
-        x = input("Llorar? Reir?")
-        if x == "llorar":
-            input("Buahhh buahh")
-        if x == "reir":
-            input("ajajjaja")
+        input("Finalizó el combate, has perdido. ")
         primera = False
         return 0
 

@@ -7,5 +7,5 @@ def finales(name, win):
         input("Continuar: Enter ")
     else:
         character = importar_personaje.importar_pj(name)
-        print(character.win)
+        print(character.lose)
         input("Continuar: Enter ")

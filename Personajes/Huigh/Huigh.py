@@ -13,7 +13,7 @@ def habilidad1(hp,energia):
     import random
     if energia>=30:
         for i in range (3):
-            prob=random.randint(1,3)
+            prob=random.randint(1,4)
             if prob==1:
                 dmg_turno=dmg_turno+3
             elif prob==2:
@@ -45,5 +45,5 @@ def habilidad3(hp,energia):
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
 
-win="Después de vencer a Lonsi. El autoproclamado rey pirata se apropió del castillonsi. Recorriendo su nuevo hogar recordó un leyenda; 'dentro de la habitación del rey se encontraba el mayor de los tesoros, quien lo obtuviese se volverá el rey de todo'.\n El mono, impulsado por fuerzas mas allá del entendimiento, se adentró en la oscuridades del castillonsi.\n Luego de una extensa y tediosa búsqueda finalmente se dio con la mítica habitación.\n Un lugar rebosante de tesoros, pero Huigh se quedó atónito tras observar un colosal cofre con una banana gravada.\n Lo abrió entre nervios. De repente se quedó perplejo, no podía creer tal contenido. El colosal cofre estaba repleto de bananas doradas.\n Uno pensaría que eran especiales. Pero solo eran bananas con colorante dorado y sabían mas rico.\n A pesar de eso Huigh se apego con gran cariño a susodicho cofre.\n"
-lose="Huigh fue derrotado por lonsi, pero el rey era tan banidoso pero unica condicion el mono podria comer ni una sola banana por el resto de su vida.\n Descendió lentamente a la locura, tanto retorica como literalmente.\n Su historia concluyó en una ciudad carcomida y llena de pestilencia.\n En la que solo terminó comiendo solo cascaras de banana.\n"
+win="Después de vencer a Lonsi. El autoproclamado rey pirata se apropió del castillonsi. Recorriendo su nuevo hogar recordó un leyenda; 'dentro de la habitación del rey se encontraba el mayor de los tesoros, quien lo obtuviese se volverá el rey de todo'.\n El mono, impulsado por fuerzas mas allá del entendimiento, se adentró en la oscuridades del castillonsi.\nLuego de una extensa y tediosa búsqueda finalmente se dio con la mítica habitación.\n Un lugar rebosante de tesoros, pero Huigh se quedó atónito tras observar un colosal cofre con una banana gravada.\n Lo abrió entre nervios. De repente se quedó perplejo, no podía creer tal contenido. El colosal cofre estaba repleto de bananas doradas.\nUno pensaría que eran especiales. Pero solo eran bananas con colorante dorado y sabían mas rico.\nA pesar de eso Huigh se apego con gran cariño a susodicho cofre.\n"
+lose="Huigh fue derrotado por lonsi, pero el rey era tan banidoso pero unica condicion el mono podria comer ni una sola banana por el resto de su vida.\nDescendió lentamente a la locura, tanto retorica como literalmente.\nSu historia concluyó en una ciudad carcomida y llena de pestilencia.\nEn la que solo terminó comiendo solo cascaras de banana.\n"

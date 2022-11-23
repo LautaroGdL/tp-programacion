@@ -37,3 +37,6 @@ def habilidad3(hp,energia):
     else:
         dmg_turno,heal,energia=0,0,0
     return(dmg_turno,heal,energia)
+
+win=""
+lose=""
