@@ -112,24 +112,26 @@ def batalla(ingame, enemy):
     enemy[2], enemy[3] = int(enemy[2]), int(enemy[3])
     tools.clear()
     print("Comienza un duelo legendario entre dos adversarios por el destino del reinonsi..... (y otros)")
+    echanges = [], []
+    #Display de vida y st
+    funcion_csv.personaje_txt(enemy[4])
+    print("ENEMIGO:")
+    enebar = bars.gen_barras(enemy[2], enemy[3])
+    bars.mostrar_barras(enebar)
+    print("Vida:", enemy[2], "| Energía:",  enemy[3])
+    print()
+    print("JUGADOR:")
+    tubar = bars.gen_barras(ingame[2], ingame[3])
+    bars.mostrar_barras(tubar)
+    print("Vida:", ingame[2], "| Energía:", ingame[3])
+    print()
 
     '''Inicio de la batalla'''    
     while ingame[2] > 0 and enemy[2] > 0:
-        #Display de vida y st
-        funcion_csv.personaje_txt(enemy[4])
-        print("ENEMIGO:")
-        enebar = bars.gen_barras(enemy[2], enemy[3])
-        bars.mostrar_barras(enebar)
-        print("Vida:", enemy[2], "| Energía:",  enemy[3])
-        print()
-        print("JUGADOR:")
-        tubar = bars.gen_barras(ingame[2], ingame[3])
-        bars.mostrar_barras(tubar)
-        print("Vida:", ingame[2], "| Energía:", ingame[3])
-        print()
 
         #Seleccion de habilidad del Own Character, y la pc
         changes = seleccionarhabilidad(ingame, 1)
+        print(echanges)
         echanges = seleccionarhabilidad(enemy, 0)
         
         #Cambios en personaje principal
@@ -143,23 +145,44 @@ def batalla(ingame, enemy):
         
         tools.clear()
         funcion_csv.personaje_txt(enemy[4])
+
+        tools.clear()
+                #Display de vida y st
+        funcion_csv.personaje_txt(enemy[4])
+        print("ENEMIGO:")
+        enebar = bars.gen_barras(enemy[2], enemy[3])
+        bars.mostrar_barras(enebar)
+        print("Vida:", enemy[2], "| Energía:",  enemy[3])
+        print()
+        print("JUGADOR:")
+        tubar = bars.gen_barras(ingame[2], ingame[3])
+        bars.mostrar_barras(tubar)
+        print("Vida:", ingame[2], "| Energía:", ingame[3])
+        print()
         #Display de daño
         print()
         print("Daño realizado: ", changes[0]) 
         print("Daño recibido: ", echanges[0], "| Curacion realizada: ", changes[1])
         print()
 
-        tools.clear()
-
     print()
     if ingame[2] > 0:
         usuario = funcion_csv.leer_ascii("name.txt")
-        name = usuario[0].replace(",", "", +"\n")
-        print(f"Finalizó el combate, has ganado {name}!")
-        ingame[2], ingame[3] = int(ingame[2]), int(ingame[3])
+        name = usuario[0].replace(",", "" + "\n")
+        x = input(f"GANASTE {name}!!!_ Celebrar? _  Llorar porque todo es muy facil y ya nada causa satisfaccion? Los desafios ya no existen ya nada es como antes. ;(")
+        if x == "Llorar porque todo es muy facil y ya nada causa satisfaccion? Los desafios ya no existen ya nada es como antes. ;(":
+            input("BUahh Buahha NUBDpáosd kSDhjpOSd asdpoSPODl SPDPSADn, SADopSD")
+        ingame[2] += 20
+        ingame[3] += 20
     else:
         tools.clear()
         print("Finalizó el combate, has perdido.")
+        x = input("Llorar? Reir?")
+        if x == "llorar":
+            input("Buahhh buahh")
+        if x == "reir":
+            input("ajajjaja")
+        return 0
 
         
         
@@ -167,7 +190,7 @@ def batalla(ingame, enemy):
 
 
 def generarenemigosarcade(n):
-    '''Genera una lista de 5 enemigos, el ultimo siempre sera lonsi'''
+    '''Genera una lista de 3 enemigos, el ultimo siempre sera lonsi'''
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
@@ -180,13 +203,11 @@ def generarenemigosarcade(n):
     return list
 
 def generarenemigosversus(n):
-    '''Genera una lista de 5 enemigos, el ultimo siempre sera lonsi'''
+    '''Genera un enemigo'''
     list=[]
     for i in range(n):
         x= random.randint(1, 6)
         en = importarenemigo(0, x)
-        if i == n:
-            lonsi = importarlonsi(0, 666)
         list.append(en)
     return list
 
@@ -204,8 +225,9 @@ def versus():
     personaje = importarjugador(1, 0)
     lista_Enemigos = generarenemigosversus(2)
     for i in range(len(lista_Enemigos)-1):
-        batalla(personaje, lista_Enemigos[i])
-
+        seguir = batalla(auxpersonaje, lista_Enemigos[i])
+        if seguir == 0:
+            break
 # x = generarenemigosarcade(2)
 # print(x)
 
