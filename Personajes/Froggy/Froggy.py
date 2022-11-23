@@ -5,7 +5,7 @@ energia=50
 name="Froggy"
 des="Su pasión por el origami es tan grande que su cuerpo se volvió uno. Gracias a su poco peso ganó mucha agilidad, pero ahora odia el viento."
 desh1="Vuela (evitando el viento) con el fin de envestir al enemigo causando 12 de DMG. Coste 30 de energía"
-desh2="Con su pierna filosa, corta al enemigo 2-7 (DMG) y se cura 40 de HP. 20 Coste de energía"
+desh2="Con su pierna filosa, corta al enemigo 2-7 (DMG) y se cura 10 de HP. 20 Coste de energía"
 desh3="Arroja un cisne de origami (que a veces usa como sombrero) causando 5-9 de DMG. Coste 20 de energía"
 
 def habilidad1(hp,energia):
