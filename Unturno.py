@@ -4,13 +4,7 @@ import seleccion_personaje
 import importar_personaje
 import bars
 import tools
-from Personajes.Arbutus import Arbutus
-from Personajes.Froggy import Froggy
-from Personajes.Gregg import Gregg
-from Personajes.Huigh import Huigh
-from Personajes.Stewie import Stewie
-from Personajes.Willy import Willy
-
+import finales
 
 def basico(mini, maxi):
     '''Genera el valor de daño de un basico basandose en el daño maximo y miniomo posible'''
@@ -166,22 +160,25 @@ def batalla(ingame, enemy):
         print()
 
     print()
+    primera = True
     if ingame[2] > 0:
         usuario = funcion_csv.leer_ascii("name.txt")
         name = usuario[0].replace(",", "" + "\n")
-        x = input(f"GANASTE {name}!!!_ Celebrar? _  Llorar porque todo es muy facil y ya nada causa satisfaccion? Los desafios ya no existen ya nada es como antes. ;(")
+        x = input(f"GANASTE {name}!!!_ Celebrar? _  Llorar porque todo es muy facil y ya nada causa satisfaccion? Los desafios ya no existen ya nada es como antes. ;(  ")
         if x == "Llorar porque todo es muy facil y ya nada causa satisfaccion? Los desafios ya no existen ya nada es como antes. ;(":
-            input("BUahh Buahha NUBDpáosd kSDhjpOSd asdpoSPODl SPDPSADn, SADopSD")
+            input("Llora*")
         ingame[2] += 20
         ingame[3] += 20
-    else:
+        return 1
+    elif primera:
         tools.clear()
-        print("Finalizó el combate, has perdido.")
+        print("Finalizó el combate, has perdido. ")
         x = input("Llorar? Reir?")
         if x == "llorar":
             input("Buahhh buahh")
         if x == "reir":
             input("ajajjaja")
+        primera = False
         return 0
 
         
@@ -217,7 +214,8 @@ def arcade():
     personaje = importarjugador(1, 0)
     lista_Enemigos = generarenemigosarcade(2)
     for i in range(len(lista_Enemigos)):
-        batalla(personaje, lista_Enemigos[i])
+        ganar = batalla(personaje, lista_Enemigos[i])
+    finales.finales(personaje[4], ganar)
 
 def versus():
     '''Programa principal, mezcla de todos las funciones anteriores '''
@@ -225,12 +223,4 @@ def versus():
     personaje = importarjugador(1, 0)
     lista_Enemigos = generarenemigosversus(2)
     for i in range(len(lista_Enemigos)-1):
-        seguir = batalla(auxpersonaje, lista_Enemigos[i])
-        if seguir == 0:
-            break
-# x = generarenemigosarcade(2)
-# print(x)
-
-# x = batalla(Arbutus,Lonsi)
-# print(x)
-
+        batalla(personaje, lista_Enemigos[i])
